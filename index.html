@@ -71,13 +71,14 @@
             font-size: 14px;
         }
 
-        /* تحسينات الجوال */
+        /* تحسينات الجوال - جالكسي 25 الترا */
         @media (max-width: 768px) {
             body {
-                font-size: 12px;
-                padding: 5px;
+                font-size: 16px;
+                padding: 10px;
                 -webkit-overflow-scrolling: touch;
                 -webkit-tap-highlight-color: transparent;
+                background: #f8f9fa;
             }
             
             * {
@@ -98,92 +99,139 @@
             
             .container {
                 max-width: 100%;
-                padding: 8px;
+                padding: 15px;
             }
             
             header {
-                padding: 12px;
-                margin-bottom: 12px;
-                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 15px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             }
             
             .main-title {
-                font-size: 1.2rem;
-                margin-bottom: 5px;
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+                line-height: 1.3;
+                text-align: center;
+                font-weight: bold;
             }
             
             .subtitle {
-                font-size: 0.95rem;
-                margin-bottom: 12px;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+                line-height: 1.4;
+                text-align: center;
             }
             
             .user-info {
-                padding: 8px 12px;
-                margin-bottom: 12px;
-                font-size: 0.85rem;
+                padding: 15px 20px;
+                margin-bottom: 20px;
+                font-size: 1.1rem;
+                border-radius: 20px;
+                background: rgba(255,255,255,0.9);
+                color: #2c3e50;
+                text-align: center;
+                font-weight: 600;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             }
             
             nav {
-                gap: 6px;
-                padding: 0 3px;
+                gap: 8px;
+                padding: 0 5px;
                 flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 25px;
             }
             
             .nav-btn {
-                padding: 8px 10px;
-                font-size: 0.75rem;
+                padding: 15px 20px;
+                font-size: 1rem;
                 min-width: auto;
                 flex: 1;
-                max-width: calc(50% - 3px);
-                margin-bottom: 6px;
+                max-width: calc(50% - 4px);
+                margin-bottom: 8px;
+                border-radius: 15px;
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-weight: 600;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transition: transform 0.2s ease;
+            }
+            
+            .nav-btn:active {
+                transform: scale(0.95);
             }
             
             .content {
-                padding: 12px;
+                padding: 10px;
                 border-radius: 10px;
                 min-height: auto;
             }
             
             .section h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+                text-align: center;
+                padding: 8px;
+                border-radius: 8px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+            }
+            
+            .section h3 {
+                font-size: 1rem;
                 margin-bottom: 12px;
+                padding: 6px 10px;
+                border-radius: 6px;
+                background: rgba(102, 126, 234, 0.1);
             }
             
             .form-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 10px;
             }
             
             .form-group {
-                margin-bottom: 12px;
+                margin-bottom: 10px;
             }
             
             .form-group input,
             .form-group select,
             .form-group textarea {
-                padding: 10px;
-                font-size: 0.9rem;
+                padding: 8px;
+                font-size: 0.85rem;
+                border-radius: 6px;
             }
             
             .btn {
-                padding: 10px 12px;
-                font-size: 0.85rem;
+                padding: 8px 10px;
+                font-size: 0.8rem;
                 width: 100%;
-                margin-bottom: 8px;
+                margin-bottom: 6px;
+                border-radius: 8px;
+                min-height: 40px;
             }
             
             .btn-group {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
             }
             
             .btn-group .btn {
                 width: 100%;
+                margin-bottom: 0;
             }
             
             table {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 overflow-x: auto;
                 display: block;
                 white-space: nowrap;
@@ -199,8 +247,9 @@
             
             table th,
             table td {
-                padding: 6px 3px;
+                padding: 4px 2px;
                 word-wrap: break-word;
+                font-size: 0.65rem;
             }
             
             .modal-content {
@@ -212,92 +261,168 @@
             
             /* تحسين الشبكة الإحصائية للجوال */
             .stats-grid {
+                display: grid !important;
                 grid-template-columns: 1fr !important;
                 gap: 8px !important;
                 margin-bottom: 15px !important;
+                width: 100%;
             }
             
             .stat-card {
                 padding: 12px !important;
-                margin-bottom: 8px;
+                margin-bottom: 0;
+                width: 100% !important;
+                box-sizing: border-box;
+                min-height: auto !important;
+                height: auto !important;
             }
             
             .stat-number {
-                font-size: 1.8rem !important;
-                margin-bottom: 6px;
+                font-size: 1.5rem !important;
+                margin-bottom: 4px;
             }
             
             .stat-label {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
+                line-height: 1.2;
             }
             
             .card {
-                padding: 12px;
+                padding: 10px;
                 margin-bottom: 8px;
+                border-radius: 8px;
             }
             
-            /* تحسين بطاقات الجمعيات للجوال */
+            /* تحسين بطاقات الجمعيات للجوال - جالكسي 25 الترا */
             .association-card, .cooperation-card {
                 width: 100% !important;
-                margin: 0 0 12px 0 !important;
-                padding: 12px !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
                 box-sizing: border-box;
                 display: block;
-                border-radius: 10px !important;
+                border-radius: 15px !important;
+                min-height: auto !important;
+                height: auto !important;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+                background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
             }
             
             .association-details, .cooperation-details {
+                display: grid !important;
                 grid-template-columns: 1fr !important;
-                gap: 6px;
+                gap: 15px !important;
             }
             
             .association-header, .cooperation-header {
+                display: flex;
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-                margin-bottom: 10px;
-                padding-bottom: 8px;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+                border-bottom: 3px solid #007bff;
             }
             
             .association-header h4, .cooperation-header h4 {
-                font-size: 1rem;
-                margin-bottom: 4px;
+                font-size: 1.4rem !important;
+                margin-bottom: 8px;
                 width: 100%;
+                line-height: 1.3;
+                text-align: center !important;
+                color: #2c3e50 !important;
+                font-weight: bold !important;
             }
             
             .status-badge {
-                align-self: flex-start;
-                font-size: 0.7rem;
-                padding: 3px 8px;
+                align-self: center;
+                font-size: 1rem !important;
+                padding: 8px 20px !important;
+                border-radius: 25px !important;
+                font-weight: bold !important;
+                margin: 10px 0 !important;
             }
             
-            .association-details p, .cooperation-details p {
-                font-size: 0.8rem;
-                margin-bottom: 4px;
+            .association-details div, .cooperation-details div {
+                padding: 15px !important;
+                border-radius: 12px !important;
+                font-size: 1.1rem !important;
+                background: #f8f9fa !important;
+                border: 2px solid #e9ecef !important;
+                text-align: center !important;
+                font-weight: 600 !important;
+                min-height: 50px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .association-details span, .cooperation-details span {
+                font-size: 0.75rem;
             }
             
             .floating-hearts {
                 display: none;
             }
             
+            /* تحسين صفحة الدخول للجوال */
+            .login-container {
+                max-width: 95% !important;
+                margin: 10px auto !important;
+                padding: 15px !important;
+                border-radius: 10px !important;
+            }
+            
+            .login-title {
+                font-size: 1.3rem !important;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+            
+            .main-desc {
+                font-size: 0.9rem !important;
+                line-height: 1.4;
+            }
+            
+            .sub-desc {
+                font-size: 0.8rem;
+                line-height: 1.3;
+            }
+            
+            .developer-info {
+                padding: 10px !important;
+                margin: 15px 0 !important;
+                border-radius: 8px;
+            }
+            
+            .developer-name {
+                font-size: 0.9rem;
+            }
+            
+            .contact-info {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+            
             /* تحسين التمرير الأفقي للجداول */
             .table-container {
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: thin;
+                border-radius: 6px;
+                overflow: hidden;
             }
             
             .table-container::-webkit-scrollbar {
-                height: 6px;
+                height: 4px;
             }
             
             .table-container::-webkit-scrollbar-track {
                 background: #f1f1f1;
-                border-radius: 3px;
+                border-radius: 2px;
             }
             
             .table-container::-webkit-scrollbar-thumb {
                 background: #888;
-                border-radius: 3px;
+                border-radius: 2px;
             }
             
             .table-container::-webkit-scrollbar-thumb:hover {
@@ -308,6 +433,7 @@
             .btn, .nav-btn, .action-btn {
                 touch-action: manipulation;
                 -webkit-tap-highlight-color: transparent;
+                min-height: 40px;
             }
             
             /* تحسين النماذج */
@@ -315,7 +441,8 @@
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
-                border-radius: 8px;
+                border-radius: 6px;
+                min-height: 40px;
             }
             
             select {
@@ -332,200 +459,329 @@
             }
             
             .section-title {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 margin-bottom: 10px;
+                padding: 6px 10px;
+                border-radius: 6px;
+                background: rgba(102, 126, 234, 0.1);
             }
             
             /* تحسين بطاقات الزيجات القادمة */
             .wedding-card {
-                padding: 10px;
-                margin-bottom: 8px;
+                padding: 8px;
+                margin-bottom: 6px;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 8px;
+                gap: 6px;
+                border-radius: 8px;
             }
             
             .wedding-info h5 {
-                font-size: 0.95rem;
-                margin-bottom: 4px;
+                font-size: 0.85rem;
+                margin-bottom: 3px;
+                line-height: 1.3;
             }
             
             .wedding-info p {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
                 margin-bottom: 2px;
+                line-height: 1.2;
             }
             
             .wedding-amount {
-                padding: 6px 12px;
-                font-size: 0.8rem;
+                padding: 4px 8px;
+                font-size: 0.7rem;
                 align-self: flex-end;
+                border-radius: 15px;
+            }
+            
+            /* تحسين الرسائل التنبيهية */
+            .alert {
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                line-height: 1.4;
             }
         }
         
         @media (max-width: 480px) {
             body {
                 font-size: 11px;
-                padding: 3px;
+                padding: 2px;
             }
             
             .container {
-                padding: 5px;
+                padding: 4px;
             }
             
             header {
-                padding: 8px;
-                margin-bottom: 8px;
+                padding: 6px;
+                margin-bottom: 6px;
+                border-radius: 8px;
             }
             
             .main-title {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                line-height: 1.2;
+                margin-bottom: 3px;
             }
             
             .subtitle {
-                font-size: 0.85rem;
-                margin-bottom: 8px;
+                font-size: 0.75rem;
+                margin-bottom: 6px;
+                line-height: 1.3;
             }
             
             .user-info {
-                padding: 6px 10px;
-                margin-bottom: 8px;
-                font-size: 0.8rem;
+                padding: 4px 8px;
+                margin-bottom: 6px;
+                font-size: 0.7rem;
+                border-radius: 12px;
             }
             
             nav {
-                gap: 4px;
-                padding: 0 2px;
+                gap: 2px;
+                padding: 0 1px;
+                justify-content: center;
             }
             
             .nav-btn {
-                padding: 6px 8px;
-                font-size: 0.7rem;
-                max-width: calc(50% - 2px);
-                margin-bottom: 4px;
+                padding: 4px 6px;
+                font-size: 0.6rem;
+                max-width: calc(33.33% - 2px);
+                margin-bottom: 2px;
+                border-radius: 8px;
+                min-height: 30px;
+                line-height: 1.1;
             }
             
             .content {
-                padding: 8px;
+                padding: 6px;
+                border-radius: 8px;
             }
             
             .section h2 {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+                padding: 6px;
+                border-radius: 6px;
+            }
+            
+            .section h3 {
+                font-size: 0.85rem;
                 margin-bottom: 8px;
+                padding: 4px 8px;
+                border-radius: 4px;
             }
             
             .form-group {
-                margin-bottom: 8px;
+                margin-bottom: 6px;
             }
             
             .form-group input,
             .form-group select,
             .form-group textarea {
-                padding: 8px;
-                font-size: 0.8rem;
+                padding: 6px;
+                font-size: 0.75rem;
+                border-radius: 4px;
+                min-height: 35px;
             }
             
             table {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
             
             table th,
             table td {
-                padding: 4px 2px;
+                padding: 3px 1px;
+                font-size: 0.6rem;
             }
             
             .btn {
-                padding: 8px 10px;
-                font-size: 0.75rem;
-                margin-bottom: 6px;
+                padding: 6px 8px;
+                font-size: 0.7rem;
+                margin-bottom: 4px;
+                border-radius: 6px;
+                min-height: 35px;
+            }
+            
+            .btn-group {
+                grid-template-columns: 1fr 1fr;
+                gap: 4px;
             }
             
             .modal-content {
-                padding: 8px;
-                margin: 3% auto;
+                padding: 6px;
+                margin: 2% auto;
+                border-radius: 6px;
             }
             
             /* تحسين الشبكة الإحصائية للشاشات الصغيرة جداً */
             .stats-grid {
-                gap: 6px !important;
-                margin-bottom: 10px !important;
+                gap: 4px !important;
+                margin-bottom: 8px !important;
             }
             
             .stat-card {
-                padding: 8px !important;
-                margin-bottom: 6px;
+                padding: 6px !important;
+                margin-bottom: 0;
+                border-radius: 6px;
             }
             
             .stat-number {
-                font-size: 1.5rem !important;
-                margin-bottom: 4px;
-            }
-            
-            .stat-label {
-                font-size: 0.7rem;
-            }
-            
-            /* تحسين إضافي لبطاقات الجمعيات على الشاشات الصغيرة جداً */
-            .association-card, .cooperation-card {
-                padding: 8px !important;
-                margin-bottom: 8px !important;
-                border-radius: 8px !important;
-            }
-            
-            .association-header, .cooperation-header {
-                gap: 6px;
-                margin-bottom: 8px;
-                padding-bottom: 6px;
-            }
-            
-            .association-header h4, .cooperation-header h4 {
-                font-size: 0.9rem !important;
-                margin-bottom: 3px;
-            }
-            
-            .association-details, .cooperation-details {
-                gap: 4px;
-            }
-            
-            .association-details p, .cooperation-details p {
-                font-size: 0.7rem;
+                font-size: 1.2rem !important;
                 margin-bottom: 2px;
             }
             
-            .status-badge {
+            .stat-label {
                 font-size: 0.65rem;
-                padding: 2px 6px;
+                line-height: 1.1;
+            }
+            
+            /* تحسين إضافي لبطاقات الجمعيات على الشاشات الصغيرة جداً - جالكسي 25 الترا */
+            .association-card, .cooperation-card {
+                width: 100% !important;
+                padding: 18px !important;
+                margin: 0 0 18px 0 !important;
+                border-radius: 12px !important;
+                box-shadow: 0 6px 15px rgba(0,0,0,0.12) !important;
+            }
+            
+            .association-header, .cooperation-header {
+                gap: 8px;
+                margin-bottom: 12px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #007bff;
+                text-align: center;
+            }
+            
+            .association-header h4, .cooperation-header h4 {
+                font-size: 1.2rem !important;
+                margin-bottom: 8px;
+                line-height: 1.3;
+                color: #2c3e50 !important;
+                font-weight: bold !important;
+                text-align: center !important;
+            }
+            
+            .association-details, .cooperation-details {
+                gap: 10px !important;
+            }
+            
+            .association-details div, .cooperation-details div {
+                padding: 12px !important;
+                border-radius: 8px !important;
+                font-size: 1rem !important;
+                background: #f8f9fa !important;
+                border: 1px solid #e9ecef !important;
+                text-align: center !important;
+                font-weight: 600 !important;
+                min-height: 45px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .association-details span, .cooperation-details span {
+                font-size: 1rem !important;
+                font-weight: 600 !important;
+            }
+            
+            .status-badge {
+                font-size: 0.9rem !important;
+                padding: 6px 15px !important;
+                border-radius: 20px !important;
+                font-weight: bold !important;
+                margin: 8px auto !important;
+                display: block !important;
+                width: fit-content !important;
+            }
+            
+            /* تحسين صفحة الدخول للشاشات الصغيرة جداً */
+            .login-container {
+                max-width: 98% !important;
+                margin: 5px auto !important;
+                padding: 10px !important;
+                border-radius: 8px !important;
+            }
+            
+            .login-title {
+                font-size: 1.1rem !important;
+                margin-bottom: 8px;
+                line-height: 1.2;
+            }
+            
+            .main-desc {
+                font-size: 0.8rem !important;
+                line-height: 1.3;
+            }
+            
+            .sub-desc {
+                font-size: 0.7rem;
+                line-height: 1.2;
+            }
+            
+            .developer-info {
+                padding: 8px !important;
+                margin: 10px 0 !important;
+                border-radius: 6px;
+            }
+            
+            .developer-name {
+                font-size: 0.8rem;
+            }
+            
+            .contact-info {
+                font-size: 0.7rem;
+                line-height: 1.3;
             }
             
             /* تحسين أقسام الصفحة الرئيسية للشاشات الصغيرة */
             .dashboard-section {
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
             
             .section-title {
-                font-size: 1rem;
-                margin-bottom: 8px;
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+                padding: 4px 8px;
+                border-radius: 4px;
             }
             
             /* تحسين بطاقات الزيجات القادمة للشاشات الصغيرة */
             .wedding-card {
-                padding: 8px;
-                margin-bottom: 6px;
-                gap: 6px;
+                padding: 6px;
+                margin-bottom: 4px;
+                gap: 4px;
+                border-radius: 6px;
             }
             
             .wedding-info h5 {
-                font-size: 0.85rem;
-                margin-bottom: 3px;
+                font-size: 0.75rem;
+                margin-bottom: 2px;
+                line-height: 1.2;
             }
             
             .wedding-info p {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
                 margin-bottom: 1px;
+                line-height: 1.1;
             }
             
             .wedding-amount {
-                padding: 4px 8px;
+                padding: 3px 6px;
+                font-size: 0.65rem;
+                border-radius: 12px;
+            }
+            
+            /* تحسين الرسائل التنبيهية للشاشات الصغيرة */
+            .alert {
+                padding: 8px;
+                margin: 8px 0;
+                border-radius: 4px;
                 font-size: 0.7rem;
+                line-height: 1.3;
             }
         }
 
@@ -644,71 +900,98 @@
         }
 
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .main-title {
             text-align: center;
             color: #2c3e50;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .subtitle {
             text-align: center;
             color: #7f8c8d;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 400;
         }
 
         .user-info {
             text-align: center;
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin-bottom: 20px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
             display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
 
         nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .nav-btn {
-            background: linear-gradient(45deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            min-width: 140px;
+            gap: 6px;
+            min-width: 110px;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-btn:hover::before {
+            left: 100%;
         }
 
         .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
 
         .nav-btn.active {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
 
         .content {
@@ -767,60 +1050,121 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
+            padding: 10px 14px;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: relative;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #667eea;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+            transform: translateY(-1px);
+            background: linear-gradient(135deg, #ffffff 0%, #f1f3f4 100%);
+        }
+        
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: #adb5bd;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
         .btn {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-            margin: 5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 3px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #3498db, #2980b9);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
         }
 
         .btn-primary:hover {
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
 
         .btn-danger {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
         }
 
         .btn-danger:hover {
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
         }
 
         .btn-warning {
-            background: linear-gradient(45deg, #f39c12, #e67e22);
+            background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+            box-shadow: 0 4px 15px rgba(254, 202, 87, 0.2);
         }
 
         .btn-warning:hover {
-            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+            box-shadow: 0 6px 20px rgba(254, 202, 87, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #48cae4 0%, #023e8a 100%);
+            box-shadow: 0 4px 15px rgba(72, 202, 228, 0.2);
+        }
+
+        .btn-success:hover {
+            box-shadow: 0 6px 20px rgba(72, 202, 228, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.2);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+            box-shadow: 0 4px 15px rgba(23, 162, 184, 0.2);
+        }
+
+        .btn-info:hover {
+            box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
         }
 
         .table-container {
@@ -905,13 +1249,37 @@
         .action-btn {
             padding: 4px 8px !important;
             margin: 1px !important;
-            font-size: 12px !important;
-            border-radius: 4px !important;
-            min-width: 32px;
-            height: 28px;
+            font-size: 11px !important;
+            border-radius: 8px !important;
+            min-width: 30px;
+            height: 26px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.4s;
+        }
+        
+        .action-btn:hover::before {
+            left: 100%;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
         }
         
         @media (max-width: 768px) {
@@ -1694,18 +2062,49 @@
         }
 
         .filter-btn {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border: 1px solid #dee2e6;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 6px 14px;
+            border-radius: 15px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.85rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.4s;
+        }
+        
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
         }
 
         .filter-btn.active {
-            background: #3498db;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border-color: #3498db;
+            border-color: #667eea;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+        
+        .filter-btn.active:hover {
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
         @media (max-width: 768px) {
@@ -1863,7 +2262,7 @@
                     <p class="developer-name">الأستاذ / ناصر مسعود آل مستنير</p>
                 </div>
                 <div class="dedication">
-                    <p class="dedication-text">إهداء لشباب القبيلة ولعموم المسلمين</p>
+                    <p class="dedication-text">إهداء لشباب القبيلة و للعموم</p>
                     <p class="blessing">بارك الله فيكم وأعانكم على الخير</p>
                 </div>
             </div>
@@ -3236,9 +3635,47 @@
                     displayIds();
                     break;
                 case 'backup':
-                    displayBackupHistory();
-                    break;
+                displayBackupHistory();
+                break;
+        }
+        
+        // إضافة الفوتر للقسم الحالي
+        addFooterToSection(sectionId);
+    }
+
+        // إضافة الفوتر لجميع الأقسام
+        function addFooterToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            
+            // إزالة الفوتر السابق إن وجد
+            const existingFooter = section.querySelector('.app-footer');
+            if (existingFooter) {
+                existingFooter.remove();
             }
+            
+            // إنشاء الفوتر الجديد
+            const footer = document.createElement('div');
+            footer.className = 'app-footer';
+            footer.style.cssText = `
+                text-align: center;
+                margin-top: 40px;
+                padding: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            `;
+            
+            footer.innerHTML = `
+                <p style="margin: 0; font-size: 18px; font-weight: bold;">تطبيق معاونة وجمعية الزواج النسخة الاولى</p>
+                <p style="margin: 10px 0 0 0; font-size: 14px; opacity: 0.9;">اعداد وتصميم الأستاذ / ناصر مسعود آل مستنير</p>
+                <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.8;">📱 0505723776 | ✉️ yam287@gmail.com</p>
+            `;
+            
+            // إضافة الفوتر في نهاية القسم
+            section.appendChild(footer);
         }
 
         // تحديث عنوان الصفحة
@@ -3548,19 +3985,33 @@
                 if (associationsList.length === 0) {
                     associationsContainer.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 20px;">لا توجد جمعيات مسجلة</p>';
                 } else {
-                    associationsContainer.innerHTML = associationsList.map(association => `
-                        <div class="association-card" onclick="selectAssociation('${association.id}')">
-                            <div class="association-header">
-                                <h4>${association.name}</h4>
-                                <span class="status-badge ${association.status === 'نشطة' ? 'active' : 'inactive'}">${association.status}</span>
+                    associationsContainer.innerHTML = associationsList.map(association => {
+                        const assocMembers = members.filter(m => m.associationId === association.id);
+                        const totalAmount = assocMembers.reduce((sum, m) => sum + (parseFloat(m.amount) || 0), 0);
+                        
+                        return `
+                        <div class="association-card" onclick="selectAssociation('${association.id}')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px; padding: 20px; margin: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div class="association-header" style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1.2rem; font-weight: bold;">${association.name}</h4>
+                                <span class="status-badge" style="background: ${(association.status || 'نشطة') === 'نشطة' ? '#28a745' : '#dc3545'}; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; margin-top: 5px; display: inline-block;">${association.status || 'نشطة'}</span>
                             </div>
-                            <div class="association-details">
-                                <p><i class="fas fa-users"></i> ${members.filter(m => m.associationId === association.id).length} عضو</p>
-                                <p><i class="fas fa-calendar"></i> ${association.createdDate || 'غير محدد'}</p>
-                                <p><i class="fas fa-money-bill-wave"></i> ${members.filter(m => m.associationId === association.id).reduce((sum, m) => sum + (parseFloat(m.amount) || 0), 0).toLocaleString()} ريال</p>
+                            <div class="association-details" style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+                                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
+                                    <i class="fas fa-users" style="margin-left: 8px; color: #ffd700;"></i>
+                                    <span>${assocMembers.length} عضو</span>
+                                </div>
+                                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
+                                    <i class="fas fa-calendar" style="margin-left: 8px; color: #ffd700;"></i>
+                                    <span>${association.createdDate || association.date || 'غير محدد'}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
+                                    <i class="fas fa-money-bill-wave" style="margin-left: 8px; color: #ffd700;"></i>
+                                    <span>${totalAmount.toLocaleString()} ريال</span>
+                                </div>
                             </div>
                         </div>
-                    `).join('');
+                        `;
+                    }).join('');
                 }
             }
 
@@ -3638,19 +4089,33 @@
                 if (cooperationsList.length === 0) {
                     cooperationsContainer.innerHTML = '<p style="text-align: center; color: #7f8c8d; padding: 20px;">لا توجد معاونات مسجلة</p>';
                 } else {
-                    cooperationsContainer.innerHTML = cooperationsList.map(cooperation => `
-                        <div class="cooperation-card" onclick="selectAssociation('${cooperation.id}')">
-                            <div class="cooperation-header">
-                                <h4>${cooperation.name}</h4>
-                                <span class="status-badge ${cooperation.status === 'نشطة' ? 'active' : 'inactive'}">${cooperation.status}</span>
+                    cooperationsContainer.innerHTML = cooperationsList.map(cooperation => {
+                        const coopMembers = members.filter(m => m.associationId === cooperation.id);
+                        const totalAmount = coopMembers.reduce((sum, m) => sum + (parseFloat(m.amount) || 0), 0);
+                        
+                        return `
+                        <div class="cooperation-card" onclick="selectAssociation('${cooperation.id}')" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; border-radius: 15px; padding: 20px; margin: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                            <div class="cooperation-header" style="margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1.2rem; font-weight: bold;">${cooperation.name}</h4>
+                                <span class="status-badge" style="background: ${(cooperation.status || 'نشطة') === 'نشطة' ? '#28a745' : '#dc3545'}; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; margin-top: 5px; display: inline-block;">${cooperation.status || 'نشطة'}</span>
                             </div>
-                            <div class="cooperation-details">
-                                <p><i class="fas fa-handshake"></i> ${members.filter(m => m.associationId === cooperation.id).length} مساهم</p>
-                                <p><i class="fas fa-calendar"></i> ${cooperation.createdDate || 'غير محدد'}</p>
-                                <p><i class="fas fa-donate"></i> ${members.filter(m => m.associationId === cooperation.id).reduce((sum, m) => sum + (parseFloat(m.amount) || 0), 0).toLocaleString()} ريال</p>
+                            <div class="cooperation-details" style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+                                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
+                                    <i class="fas fa-handshake" style="margin-left: 8px; color: #ffd700;"></i>
+                                    <span>${coopMembers.length} مساهم</span>
+                                </div>
+                                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
+                                    <i class="fas fa-calendar" style="margin-left: 8px; color: #ffd700;"></i>
+                                    <span>${cooperation.createdDate || cooperation.date || 'غير محدد'}</span>
+                                </div>
+                                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
+                                    <i class="fas fa-donate" style="margin-left: 8px; color: #ffd700;"></i>
+                                    <span>${totalAmount.toLocaleString()} ريال</span>
+                                </div>
                             </div>
                         </div>
-                    `).join('');
+                        `;
+                    }).join('');
                 }
             }
 
@@ -3700,90 +4165,10 @@
                 }).join('');
             }
             
-            // تحديث الإحصائيات العامة في الصفحة الرئيسية
-            updateGeneralStatistics(totalMembers, marriedMembers, scheduledMembers, remainingMembers, totalAmount, totalPaidAmount, totalUnpaidAmount, totalAssociations, totalCooperations, activeAssociations, activeCooperations);
+            // تم حذف الإحصائيات العامة من الصفحة الرئيسية
         }
         
-        function updateGeneralStatistics(totalMembers, marriedMembers, scheduledMembers, remainingMembers, totalAmount, totalPaidAmount, totalUnpaidAmount, totalAssociations, totalCooperations, activeAssociations, activeCooperations) {
-            // إضافة قسم الإحصائيات العامة في الصفحة الرئيسية إذا لم يكن موجوداً
-            const homeSection = document.getElementById('home');
-            let generalStatsSection = document.getElementById('generalStatistics');
-            
-            if (!generalStatsSection) {
-                generalStatsSection = document.createElement('div');
-                generalStatsSection.id = 'generalStatistics';
-                generalStatsSection.innerHTML = `
-                    <div style="margin-bottom: 40px;">
-                        <h3 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #9b59b6; padding-bottom: 10px;">
-                            <i class="fas fa-chart-pie"></i> الإحصائيات العامة
-                        </h3>
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalTotalMembers">0</div>
-                                <div class="stat-label">إجمالي الأعضاء</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalMarriedMembers">0</div>
-                                <div class="stat-label">المتزوجون</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalScheduledMembers">0</div>
-                                <div class="stat-label">تم تحديد زواجهم</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalRemainingMembers">0</div>
-                                <div class="stat-label">المتبقي</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalTotalAmount">0</div>
-                                <div class="stat-label">إجمالي المبالغ (ريال)</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalPaidAmount">0</div>
-                                <div class="stat-label">المبالغ المدفوعة (ريال)</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalUnpaidAmount">0</div>
-                                <div class="stat-label">المبالغ المستحقة (ريال)</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalTotalAssociations">0</div>
-                                <div class="stat-label">إجمالي الجمعيات</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalActiveAssociations">0</div>
-                                <div class="stat-label">الجمعيات النشطة</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalTotalCooperations">0</div>
-                                <div class="stat-label">إجمالي المعاونات</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number" id="generalActiveCooperations">0</div>
-                                <div class="stat-label">المعاونات النشطة</div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                // إدراج القسم في بداية الصفحة الرئيسية
-                const firstChild = homeSection.children[1]; // بعد العنوان
-                homeSection.insertBefore(generalStatsSection, firstChild);
-            }
-            
-            // تحديث القيم
-            document.getElementById('generalTotalMembers').textContent = totalMembers.toLocaleString();
-            document.getElementById('generalMarriedMembers').textContent = marriedMembers.toLocaleString();
-            document.getElementById('generalScheduledMembers').textContent = scheduledMembers.toLocaleString();
-            document.getElementById('generalRemainingMembers').textContent = remainingMembers.toLocaleString();
-            document.getElementById('generalTotalAmount').textContent = totalAmount.toLocaleString();
-            document.getElementById('generalPaidAmount').textContent = totalPaidAmount.toLocaleString();
-            document.getElementById('generalUnpaidAmount').textContent = totalUnpaidAmount.toLocaleString();
-            document.getElementById('generalTotalAssociations').textContent = totalAssociations.toLocaleString();
-            document.getElementById('generalActiveAssociations').textContent = activeAssociations.toLocaleString();
-            document.getElementById('generalTotalCooperations').textContent = totalCooperations.toLocaleString();
-            document.getElementById('generalActiveCooperations').textContent = activeCooperations.toLocaleString();
-        }
+        // تم حذف دالة updateGeneralStatistics
 
         // وظائف الأعضاء
         // تم حذف الكود المعطل الذي كان يحاول الوصول إلى عنصر غير موجود (memberForm)
@@ -4267,6 +4652,36 @@
                 }
             }
         }
+
+        // دالة تحديث حالة الزواج في الساعة 10 مساءً
+        function checkAndUpdateMaritalStatusAt10PM() {
+            const now = new Date();
+            const hour = now.getHours();
+            
+            // إذا كانت الساعة 10 مساءً (22:00)
+            if (hour === 22) {
+                const today = now.toISOString().split('T')[0]; // تاريخ اليوم بصيغة YYYY-MM-DD
+                
+                // البحث عن الأعضاء الذين تاريخ زواجهم اليوم وحالتهم "تم تحديد زواجهم"
+                members.forEach(member => {
+                    if (member.marriageDate === today && member.maritalStatus === 'تم تحديد الزواج') {
+                        member.maritalStatus = 'متزوج';
+                        console.log(`تم تحديث حالة العضو ${member.name} إلى متزوج`);
+                    }
+                });
+                
+                saveMembers();
+                updateStats();
+                
+                // إذا كان المستخدم في صفحة الأعضاء، قم بتحديث العرض
+                if (currentSection === 'members') {
+                    displayMembers();
+                }
+            }
+        }
+
+        // تشغيل فحص تحديث حالة الزواج كل دقيقة
+        setInterval(checkAndUpdateMaritalStatusAt10PM, 60000); // كل 60 ثانية
 
         function filterMembers(filter) {
             currentFilter = filter;
@@ -5749,34 +6164,7 @@
         }
 
         // دالة إنشاء خيارات المستلم
-        function getReceiverOptions(selectedReceiver) {
-            let options = '';
-
-            // إضافة المسؤولين من الجمعية الحالية أولاً
-            if (currentAssociation) {
-                if (currentAssociation.president) {
-                    const selected = selectedReceiver === currentAssociation.president ? 'selected' : '';
-                    options += `<option value="${currentAssociation.president}" ${selected}>${currentAssociation.president}</option>`;
-                }
-                if (currentAssociation.secretary) {
-                    const selected = selectedReceiver === currentAssociation.secretary ? 'selected' : '';
-                    options += `<option value="${currentAssociation.secretary}" ${selected}>${currentAssociation.secretary}</option>`;
-                }
-                if (currentAssociation.treasurer) {
-                    const selected = selectedReceiver === currentAssociation.treasurer ? 'selected' : '';
-                    options += `<option value="${currentAssociation.treasurer}" ${selected}>${currentAssociation.treasurer}</option>`;
-                }
-            }
-
-            // ثم إضافة الخيارات الثابتة
-            const fixedOptions = ['العريس', 'والد العريس', 'آخر'];
-            fixedOptions.forEach(option => {
-                const selected = selectedReceiver === option ? 'selected' : '';
-                options += `<option value="${option}" ${selected}>${option}</option>`;
-            });
-
-            return options;
-        }
+        // تم حذف الدالة المكررة لحل مشكلة تكرار العريس والمسؤول
 
         // دالة إقفال/إلغاء إقفال التحصيل (للمدير العام فقط)
         function toggleCollectionLock(memberId) {
@@ -6345,6 +6733,7 @@
                 const association = {
                     id: Date.now().toString(),
                     ...associationData,
+                    status: 'نشطة',
                     createdAt: new Date().toISOString()
                 };
 
@@ -6364,6 +6753,11 @@
 
             // تحديث العرض والأقسام
             displayAssociations();
+            
+            // تحديث قسم المعاونات إذا كان نشطاً
+            if (document.getElementById('register').classList.contains('active')) {
+                displayCooperations();
+            }
 
             // تحديث جميع الأقسام إذا تم تعديل الجمعية الحالية
             if (editId && currentAssociation && currentAssociation.id === editId) {
@@ -7698,7 +8092,112 @@
         }
 
         function getDefaultTerms() {
-            return '<p>لا توجد قوانين افتراضية. يرجى إضافة القوانين الخاصة بك.</p>';
+            return `
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h2 style="color: #2c3e50; font-size: 28px; margin-bottom: 10px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">تطبيق معاونة وجمعية الزواج</h2>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        <h3 style="margin: 0; font-size: 20px;">بسم الله الرحمن الرحيم</h3>
+                        <p style="margin: 10px 0 0 0; font-size: 16px;">الحمد لله، والصلاة والسلام على رسول الله، أما بعد:</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 25px; border-right: 5px solid #3498db;">
+                    <p style="font-size: 18px; line-height: 1.8; color: #2c3e50; text-align: justify;">انطلاقًا من مبدأ <strong style="color: #e74c3c;">التكافل الاجتماعي</strong>، وتعزيزًا لقيم <strong style="color: #27ae60;">التعاون والمساندة</strong> بين أبناء قبيلة آل مستنير، فقد تم إقرار نظام جمعية الزواج وفقًا للبنود التالية:</p>
+                </div>
+
+                <div style="display: grid; gap: 20px;">
+                    <!-- المادة الأولى -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #e74c3c;">
+                        <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-coins" style="margin-left: 10px;"></i>المادة (1): آلية المساهمة</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #fef9e7; border-radius: 6px; border-right: 3px solid #f39c12;">• يتم جمع مبلغ <strong style="color: #d35400;">(1000 ريال)</strong> من كل عضو عند وجود زواج مؤكد لأحد المشتركين في الجمعية.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #eaf2f8; border-radius: 6px; border-right: 3px solid #3498db;">• لا تُجمع المبالغ بشكل شهري، بل تُطلب <strong style="color: #2980b9;">حسب الحاجة</strong>، وبشرط وجود موعد زواج رسمي.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #fdf2e9; border-radius: 6px; border-right: 3px solid #e67e22;">• في حال وُجد أكثر من حالتي زواج خلال شهر واحد، يتم ترحيل <strong style="color: #d35400;">الزواج الثالث</strong> إلى الشهر التالي.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة الثانية -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #27ae60;">
+                        <h3 style="color: #27ae60; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-check-circle" style="margin-left: 10px;"></i>المادة (2): شروط الاستحقاق</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #e8f5e8; border-radius: 6px; border-right: 3px solid #27ae60;">• يُصرف الدعم فقط عند تحديد <strong style="color: #27ae60;">موعد الزواج رسميًا</strong>.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #ffeaa7; border-radius: 6px; border-right: 3px solid #fdcb6e;">• لا يحق للعضو الاستفادة في حال تم <strong style="color: #e17055;">تأجيل الزواج</strong> أو لم يُحدد موعده بشكل رسمي.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة الثالثة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #8e44ad;">
+                        <h3 style="color: #8e44ad; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-exclamation-triangle" style="margin-left: 10px;"></i>المادة (3): الالتزام المالي</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #f4e6ff; border-radius: 6px; border-right: 3px solid #8e44ad;">• المساهمة المالية <strong style="color: #8e44ad;">إلزامية</strong> على جميع الأعضاء دون استثناء.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #ffe6e6; border-radius: 6px; border-right: 3px solid #e74c3c;">• لا يُقبل الامتناع عن الدفع لأي سبب، بما في ذلك <strong style="color: #c0392b;">الخلافات الشخصية</strong> أو الآراء الخاصة.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة الرابعة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #f39c12;">
+                        <h3 style="color: #f39c12; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-shield-alt" style="margin-left: 10px;"></i>المادة (4): الاستقلالية</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #fef9e7; border-radius: 6px; border-right: 3px solid #f39c12;">• الجمعية كيان <strong style="color: #d68910;">مستقل ماليًا وإداريًا</strong>.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #fff5f5; border-radius: 6px; border-right: 3px solid #e74c3c;">• تُمنع إدخال أي <strong style="color: #c0392b;">مشاكل قبلية أو شخصية</strong> في شؤون الجمعية.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة الخامسة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #34495e;">
+                        <h3 style="color: #34495e; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-heart-broken" style="margin-left: 10px;"></i>المادة (5): حالات الوفاة</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-right: 3px solid #6c757d;">• في حال وفاة أحد الأعضاء، تُحصى جميع مبالغ مساهماته السابقة.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #e8f5e8; border-radius: 6px; border-right: 3px solid #28a745;">• تُسلَّم تلك المبالغ إلى <strong style="color: #155724;">ورثته الشرعيين</strong> أو من ينوب عنهم رسميًا.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #d1ecf1; border-radius: 6px; border-right: 3px solid #17a2b8;">• يُعفى الورثة من أي التزامات مستقبلية تجاه الجمعية.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة السادسة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #17a2b8;">
+                        <h3 style="color: #17a2b8; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-users-cog" style="margin-left: 10px;"></i>المادة (6): اللجنة المشرفة</h3>
+                        <p style="margin-bottom: 15px; color: #495057; font-weight: bold;">تُشكّل لجنة من أبناء القبيلة تتولى المهام التالية:</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 8px; padding: 8px; background: #e3f2fd; border-radius: 6px; border-right: 3px solid #2196f3;">• تنسيق مواعيد الزواج</li>
+                            <li style="margin-bottom: 8px; padding: 8px; background: #f3e5f5; border-radius: 6px; border-right: 3px solid #9c27b0;">• الإعلان عن بدء الجمعية عند وجود مناسبة زواج</li>
+                            <li style="margin-bottom: 8px; padding: 8px; background: #e8f5e8; border-radius: 6px; border-right: 3px solid #4caf50;">• جمع المساهمات من الأعضاء</li>
+                            <li style="margin-bottom: 8px; padding: 8px; background: #fff3e0; border-radius: 6px; border-right: 3px solid #ff9800;">• تسليم المبلغ للمستفيد</li>
+                            <li style="margin-bottom: 8px; padding: 8px; background: #fce4ec; border-radius: 6px; border-right: 3px solid #e91e63;">• حفظ السجلات والتوثيقات اللازمة</li>
+                            <li style="margin-bottom: 8px; padding: 8px; background: #f1f8e9; border-radius: 6px; border-right: 3px solid #8bc34a;">• حل الخلافات المرتبطة بالجمعية</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة السابعة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #dc3545;">
+                        <h3 style="color: #dc3545; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-ban" style="margin-left: 10px;"></i>المادة (7): ضوابط الاتفاقات</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #f8d7da; border-radius: 6px; border-right: 3px solid #dc3545;">• يمنع إبرام أي <strong style="color: #721c24;">اتفاق خاص</strong> بين العضو والمستفيد خارج إطار اللجنة.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #d4edda; border-radius: 6px; border-right: 3px solid #28a745;">• جميع العمليات (جمع وتسليم) تتم عبر <strong style="color: #155724;">اللجنة المشرفة فقط</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة الثامنة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #6f42c1;">
+                        <h3 style="color: #6f42c1; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-handshake" style="margin-left: 10px;"></i>المادة (8): آلية التسليم</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #f8f4ff; border-radius: 6px; border-right: 3px solid #6f42c1;">• يُسلَّم المبلغ المستحق بالتزامن مع <strong style="color: #6f42c1;">معونة القبيلة المعتادة</strong>.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #e7f3ff; border-radius: 6px; border-right: 3px solid #007bff;">• لا يُشترط إقامة <strong style="color: #0056b3;">زامل خاص</strong> للمستفيد.</li>
+                        </ul>
+                    </div>
+
+                    <!-- المادة التاسعة -->
+                    <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-right: 4px solid #20c997;">
+                        <h3 style="color: #20c997; margin-bottom: 15px; font-size: 20px;"><i class="fas fa-gavel" style="margin-left: 10px;"></i>المادة (9): الأحكام الختامية</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 12px; padding: 10px; background: #d1f2eb; border-radius: 6px; border-right: 3px solid #20c997;">• يبدأ العمل بهذا النظام اعتبارًا من <strong style="color: #0c5460;">تاريخ توقيعه من قِبل الأعضاء</strong>.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #fff2cc; border-radius: 6px; border-right: 3px solid #ffc107;">• يُعد توقيع العضو إقرارًا بـ<strong style="color: #856404;">الالتزام الكامل</strong> بكافة بنود الاتفاقية.</li>
+                            <li style="margin-bottom: 12px; padding: 10px; background: #e2e3e5; border-radius: 6px; border-right: 3px solid #6c757d;">• يُمكن تعديل هذه البنود بموافقة <strong style="color: #495057;">أغلبية الأعضاء</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            `;
         }
 
         // وظائف الكشوفات والتقارير المحدثة
@@ -9035,7 +9534,7 @@
                         <title>${reportType} - ${associationName}</title>
                         <style>
                             @page {
-                                margin: 15mm;
+                                margin: 12mm;
                                 size: A4;
                             }
 
@@ -9043,9 +9542,10 @@
                                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                                 direction: rtl;
                                 margin: 0;
-                                padding: 20px;
-                                line-height: 1.4;
+                                padding: 10px;
+                                line-height: 1.3;
                                 color: #333;
+                                font-size: 11px;
                             }
 
                             /* رأس التقرير */
@@ -9059,21 +9559,21 @@
                             }
 
                             .report-title {
-                                font-size: 24px;
+                                font-size: 18px;
                                 font-weight: bold;
                                 color: #2c3e50;
-                                margin: 0 0 8px 0;
+                                margin: 0 0 5px 0;
                             }
 
                             .association-name {
-                                font-size: 18px;
+                                font-size: 14px;
                                 color: #34495e;
-                                margin: 0 0 8px 0;
+                                margin: 0 0 5px 0;
                                 font-weight: 600;
                             }
 
                             .report-date {
-                                font-size: 14px;
+                                font-size: 11px;
                                 color: #7f8c8d;
                                 margin: 0;
                             }
@@ -9099,14 +9599,14 @@
                             table {
                                 width: 100%;
                                 border-collapse: collapse;
-                                margin: 15px 0;
-                                font-size: 12px;
-                                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                                margin: 8px 0;
+                                font-size: 10px;
+                                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
                             }
 
                             th, td {
                                 border: 1px solid #bdc3c7;
-                                padding: 6px 8px;
+                                padding: 3px 5px;
                                 text-align: right;
                                 vertical-align: middle;
                             }
@@ -9115,7 +9615,7 @@
                                 background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
                                 color: white;
                                 font-weight: bold;
-                                font-size: 11px;
+                                font-size: 9px;
                                 text-align: center;
                             }
 
@@ -9129,17 +9629,27 @@
 
                             /* تذييل التقرير */
                             .report-footer {
-                                border: 1px solid #dee2e6;
-                                border-radius: 8px;
+                                position: fixed;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                border-top: 1px solid #dee2e6;
                                 padding: 8px 12px;
-                                background: #f8f9fa;
-                                margin-top: 20px;
+                                background: white;
                                 text-align: center;
-                                font-size: 10px;
+                                font-size: 9px;
                                 font-weight: bold;
                                 color: #2c3e50;
-                                line-height: 1.4;
+                                line-height: 1.2;
                                 page-break-inside: avoid;
+                            }
+                            
+                            .content {
+                                margin-bottom: 60px;
+                            }
+                            
+                            .page-break {
+                                page-break-before: always;
                             }
 
                             .app-title {
@@ -9207,23 +9717,26 @@
                         </style>
                     </head>
                     <body>
-                        <!-- رأس التقرير -->
-                        <div class="report-header">
-                            <div class="report-title">${associationName}</div>
-                            <div class="association-name">${reportType}</div>
-                            <div class="report-date">تاريخ التقرير: ${currentDate}</div>
-                            ${statsInfo}
-                        </div>
+                        <div class="content">
+                            <!-- رأس التقرير -->
+                            <div class="report-header">
+                                <div class="report-title">${associationName}</div>
+                                <div class="association-name">${reportType}</div>
+                                <div class="report-date">تاريخ التقرير: ${currentDate}</div>
+                                ${statsInfo}
+                            </div>
 
-                        <!-- محتوى التقرير -->
-                        <div class="report-content">
-                            ${content}
+                            <!-- محتوى التقرير -->
+                            <div class="report-content">
+                                ${content}
+                            </div>
                         </div>
 
                         <!-- تذييل التقرير -->
                         <div class="report-footer">
-                            <div class="app-title">${associationName}</div>
-                            <div class="designer-info">تاريخ الطباعة: ${currentDate}</div>
+                            <div class="app-title">تطبيق معاونة وجمعية الزواج النسخة الاولى</div>
+                            <div class="designer-info">اعداد وتصميم الأستاذ / ناصر مسعود آل مستنير</div>
+                            <div class="phone-number">📱 0505723776 | ✉️ yam287@gmail.com</div>
                         </div>
                     </body>
                 </html>
@@ -9237,38 +9750,65 @@
             // تهيئة التطبيق أولاً
             initializeApp();
             
-            // فحص الجلسة النشطة
-            const hasActiveSession = checkActiveSession();
+            // محاولة استعادة الجلسة
+            const savedUser = localStorage.getItem('currentUser');
+            const savedAssociation = localStorage.getItem('currentAssociation');
+            const savedSection = localStorage.getItem('currentSection');
             
-            if (!hasActiveSession) {
-                // تحميل المستخدم المحفوظ إذا لم تكن هناك جلسة نشطة
-                const savedUser = localStorage.getItem('currentUser');
-                if (savedUser) {
-                    try {
-                        currentUser = JSON.parse(savedUser);
-                        // التحقق من صحة بيانات المستخدم
-                        const userExists = users.find(u => u.id === currentUser.id || u.civilId === currentUser.civilId);
-                        if (userExists && currentUser) {
-                            // تحديث آخر دخول
-                            currentUser.lastLogin = new Date().toISOString();
-                            const userIndex = users.findIndex(u => u.id === currentUser.id);
-                            if (userIndex !== -1) {
-                                users[userIndex].lastLogin = currentUser.lastLogin;
-                                saveUsers();
-                            }
-                            localStorage.setItem('currentUser', JSON.stringify(currentUser));
-                            
-                            // تسجيل الدخول
-                            login();
-                        } else {
-                            // مسح الجلسة إذا كان المستخدم غير موجود
-                            clearSession();
-                            console.log('المستخدم المحفوظ غير صالح، تم مسح الجلسة');
+            if (savedUser) {
+                try {
+                    const parsedUser = JSON.parse(savedUser);
+                    
+                    // التحقق من وجود المستخدم في قاعدة البيانات
+                    const userExists = users.find(u => 
+                        (u.id === parsedUser.id) || 
+                        (u.civilId === parsedUser.civilId && parsedUser.civilId !== '')
+                    );
+                    
+                    if (userExists) {
+                        // تحديث بيانات المستخدم الحالي
+                        currentUser = userExists;
+                        currentUser.lastLogin = new Date().toISOString();
+                        
+                        // تحديث آخر دخول في قاعدة البيانات
+                        const userIndex = users.findIndex(u => u.id === currentUser.id);
+                        if (userIndex !== -1) {
+                            users[userIndex].lastLogin = currentUser.lastLogin;
+                            saveUsers();
                         }
-                    } catch (e) {
-                        console.error('خطأ في تحميل بيانات المستخدم:', e);
+                        
+                        // حفظ المستخدم المحدث
+                        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                        
+                        // استعادة الجمعية المحفوظة
+                        if (savedAssociation) {
+                            try {
+                                currentAssociation = JSON.parse(savedAssociation);
+                            } catch (e) {
+                                console.error('خطأ في تحميل بيانات الجمعية:', e);
+                                currentAssociation = associations[0] || null;
+                            }
+                        }
+                        
+                        // إكمال تسجيل الدخول
+                        completeLogin();
+                        
+                        // الانتقال للقسم المحفوظ
+                        if (savedSection) {
+                            setTimeout(() => {
+                                showSection(savedSection);
+                            }, 200);
+                        }
+                        
+                        console.log('تم استعادة الجلسة بنجاح للمستخدم:', currentUser.name);
+                    } else {
+                        // مسح الجلسة إذا كان المستخدم غير موجود
                         clearSession();
+                        console.log('المستخدم المحفوظ غير صالح، تم مسح الجلسة');
                     }
+                } catch (e) {
+                    console.error('خطأ في تحميل بيانات المستخدم:', e);
+                    clearSession();
                 }
             }
 
@@ -9315,78 +9855,94 @@
                     <meta charset="UTF-8">
                     <title>قوانين وشروط الجمعية</title>
                     <style>
+                        @page {
+                            size: A4;
+                            margin: 15mm;
+                        }
                         body {
                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                            line-height: 1.8;
-                            margin: 40px;
+                            line-height: 1.4;
+                            margin: 0;
+                            padding: 0;
                             color: #333;
+                            font-size: 12px;
                         }
                         h3 {
                             color: #2c3e50;
                             text-align: center;
-                            border-bottom: 2px solid #3498db;
-                            padding-bottom: 10px;
+                            border-bottom: 1px solid #3498db;
+                            padding-bottom: 5px;
+                            margin: 10px 0;
+                            font-size: 16px;
                         }
                         h4 {
                             color: #34495e;
-                            margin-top: 25px;
+                            margin: 15px 0 8px 0;
+                            font-size: 14px;
                         }
                         ul {
-                            margin: 15px 0;
+                            margin: 8px 0;
+                            padding-right: 20px;
                         }
                         li {
-                            margin: 8px 0;
+                            margin: 4px 0;
+                            padding: 3px;
+                            font-size: 11px;
                         }
                         p {
-                            margin: 15px 0;
+                            margin: 8px 0;
                             text-align: justify;
+                            font-size: 11px;
                         }
-                        .header {
-                            text-align: center;
-                            margin-bottom: 30px;
-                            font-family: Arial, sans-serif;
-                            font-weight: bold;
-                            font-size: 0.9rem;
-                            color: #2c3e50;
+                        .page-break {
+                            page-break-before: always;
                         }
                         .footer {
+                            position: fixed;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
                             text-align: center;
-                            margin-top: 30px;
-                            padding-top: 15px;
+                            padding: 10px;
                             border-top: 1px solid #dee2e6;
-                            font-family: Arial, sans-serif;
-                            font-weight: bold;
-                            font-size: 0.9rem;
+                            background: white;
+                            font-size: 10px;
                             color: #2c3e50;
-                            line-height: 1.4;
+                            line-height: 1.2;
                         }
                         .app-title {
-                            color: #2c3e50;
-                            font-size: 12px;
-                            margin-bottom: 5px;
+                            font-weight: bold;
+                            margin-bottom: 3px;
                         }
                         .designer-info {
-                            color: #34495e;
-                            margin-bottom: 3px;
+                            margin-bottom: 2px;
                         }
                         .phone-number {
                             color: #e74c3c;
                             font-weight: bold;
                         }
-                        .dedication {
-                            color: #8e44ad;
-                            font-style: italic;
-                            margin-top: 5px;
+                        .content {
+                            margin-bottom: 80px;
+                        }
+                        @media print {
+                            .footer {
+                                position: fixed;
+                                bottom: 0;
+                            }
+                            .page-break {
+                                page-break-before: always;
+                            }
                         }
                     </style>
                 </head>
                 <body>
-                    ${termsContent}
+                    <div class="content">
+                        ${termsContent}
+                    </div>
                     <div class="footer">
-                        <div class="app-title">حقوق تطبيق جمعية ومعاونة الزواج</div>
-                        <div class="designer-info">للأستاذ / ناصر مسعود آل مستنير</div>
-                        <div class="phone-number">📱 0505723776</div>
-                        <div class="dedication">إهداء للشباب المقدمين على الزواج</div>
+                        <div class="app-title">تطبيق معاونة وجمعية الزواج النسخة الاولى</div>
+                        <div class="designer-info">اعداد وتصميم الأستاذ / ناصر مسعود آل مستنير</div>
+                        <div class="phone-number">📱 0505723776 | ✉️ yam287@gmail.com</div>
                     </div>
                 </body>
                 </html>
@@ -10475,11 +11031,14 @@
                 localStorage.setItem('currentAssociation', JSON.stringify(currentAssociation));
             }
 
-            // عرض القسم المناسب حسب نوع المستخدم
-            if (currentUser.role === 'member') {
-                showSection('myProfile');
-            } else {
-                showSection('home');
+            // عرض القسم المناسب حسب نوع المستخدم (فقط إذا لم يكن هناك قسم محفوظ)
+            const savedSection = localStorage.getItem('currentSection');
+            if (!savedSection) {
+                if (currentUser.role === 'member') {
+                    showSection('myProfile');
+                } else {
+                    showSection('home');
+                }
             }
             
             console.log('تم تسجيل الدخول بنجاح للمستخدم:', currentUser.name);
@@ -10537,7 +11096,7 @@
                     <title>كشف أرقام الأعضاء - ${associationName}</title>
                     <style>
                         @page {
-                            margin: 15mm;
+                            margin: 12mm;
                             size: A4;
                         }
 
@@ -10545,36 +11104,37 @@
                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                             direction: rtl;
                             margin: 0;
-                            padding: 20px;
-                            line-height: 1.4;
+                            padding: 10px;
+                            line-height: 1.3;
                             color: #333;
+                            font-size: 11px;
                         }
 
                         .report-header {
-                            border: 3px solid #2c3e50;
-                            border-radius: 10px;
-                            padding: 15px;
-                            margin-bottom: 20px;
+                            border: 2px solid #2c3e50;
+                            border-radius: 8px;
+                            padding: 10px;
+                            margin-bottom: 15px;
                             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
                             text-align: center;
                         }
 
                         .report-title {
-                            font-size: 24px;
+                            font-size: 18px;
                             font-weight: bold;
                             color: #2c3e50;
-                            margin: 0 0 8px 0;
+                            margin: 0 0 5px 0;
                         }
 
                         .association-name {
-                            font-size: 18px;
+                            font-size: 14px;
                             color: #34495e;
-                            margin: 0 0 8px 0;
+                            margin: 0 0 5px 0;
                             font-weight: 600;
                         }
 
                         .report-date {
-                            font-size: 14px;
+                            font-size: 11px;
                             color: #7f8c8d;
                             margin: 0;
                         }
@@ -10582,14 +11142,14 @@
                         table {
                             width: 100%;
                             border-collapse: collapse;
-                            margin: 15px 0;
-                            font-size: 12px;
-                            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                            margin: 8px 0;
+                            font-size: 10px;
+                            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
                         }
 
                         th, td {
                             border: 1px solid #bdc3c7;
-                            padding: 8px;
+                            padding: 4px 6px;
                             text-align: right;
                             vertical-align: middle;
                         }
@@ -10599,23 +11159,30 @@
                             color: white;
                             font-weight: bold;
                             text-align: center;
+                            font-size: 9px;
                         }
 
                         tr:nth-child(even) {
                             background-color: #f8f9fa;
                         }
 
+                        .content {
+                            margin-bottom: 60px;
+                        }
+
                         .report-footer {
-                            border: 1px solid #dee2e6;
-                            border-radius: 8px;
+                            position: fixed;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            border-top: 1px solid #dee2e6;
                             padding: 8px 12px;
-                            background: #f8f9fa;
-                            margin-top: 20px;
+                            background: white;
                             text-align: center;
-                            font-size: 10px;
+                            font-size: 9px;
                             font-weight: bold;
                             color: #2c3e50;
-                            line-height: 1.4;
+                            line-height: 1.2;
                             page-break-inside: avoid;
                         }
 
@@ -10666,20 +11233,21 @@
                     </style>
                 </head>
                 <body>
-                    <div class="report-header">
-                        <div class="report-title">كشف أرقام الأعضاء</div>
-                        <div class="association-name">${associationName}</div>
-                        <div class="report-date">تاريخ الكشف: ${currentDate}</div>
-                        <div style="font-size: 10px; color: #2c3e50; margin: 5px 0 0 0; font-weight: 600; border-top: 1px solid #bdc3c7; padding-top: 5px;">إجمالي الأعضاء: ${associationMembers.length}</div>
+                    <div class="content">
+                        <div class="report-header">
+                            <div class="report-title">كشف أرقام الأعضاء</div>
+                            <div class="association-name">${associationName}</div>
+                            <div class="report-date">تاريخ الكشف: ${currentDate}</div>
+                            <div style="font-size: 10px; color: #2c3e50; margin: 5px 0 0 0; font-weight: 600; border-top: 1px solid #bdc3c7; padding-top: 5px;">إجمالي الأعضاء: ${associationMembers.length}</div>
+                        </div>
+
+                        ${tableHTML}
                     </div>
 
-                    ${tableHTML}
-
                     <div class="report-footer">
-                        <div class="app-title">حقوق تطبيق جمعية ومعاونة الزواج</div>
-                        <div class="designer-info">للأستاذ / ناصر مسعود آل مستنير</div>
-                        <div class="phone-number">📱 0505723776</div>
-                        <div class="dedication">إهداء للشباب المقدمين على الزواج</div>
+                        <div class="app-title">تطبيق معاونة وجمعية الزواج النسخة الاولى</div>
+                        <div class="designer-info">اعداد وتصميم الأستاذ / ناصر مسعود آل مستنير</div>
+                        <div class="phone-number">📱 0505723776 | ✉️ yam287@gmail.com</div>
                     </div>
                 </body>
                 </html>
@@ -10706,11 +11274,11 @@
                             const newWorker = registration.installing;
                             newWorker.addEventListener('statechange', function() {
                                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // يوجد تحديث جديد
-                                    if (confirm('يتوفر تحديث جديد للتطبيق. هل تريد إعادة تحميل الصفحة؟')) {
-                                        newWorker.postMessage({ type: 'SKIP_WAITING' });
-                                        window.location.reload();
-                                    }
+                                    // يوجد تحديث جديد - تحديث صامت بدون إعادة تحميل
+                                    console.log('تم العثور على تحديث جديد - سيتم تطبيقه في الخلفية');
+                                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                    // إزالة إعادة التحميل التلقائي لتجنب الخروج من التطبيق
+                                    // window.location.reload();
                                 }
                             });
                         });
