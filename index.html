@@ -33,7 +33,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
     <title>تطبيق جمعية الزواج - النسخة المتكاملة</title>
     
     <!-- PWA Manifest -->
@@ -48,9 +48,6 @@
     <meta name="msapplication-tap-highlight" content="no">
     
     <!-- Apple Touch Icons -->
-    
-    <!-- ملف CSS المتجاوب المحسن -->
-    <link rel="stylesheet" href="responsive.css">
     <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik05NiA0OEM4MC41MzYgNDggNjggNjAuNTM2IDY4IDc2QzY4IDkxLjQ2NCA4MC41MzYgMTA0IDk2IDEwNEMxMTEuNDY0IDEwNCAxMjQgOTEuNDY0IDEyNCA3NkMxMjQgNjAuNTM2IDExMS40NjQgNDggOTYgNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTQ0IDEyOEMxNDQgMTEyLjUzNiAxMzEuNDY0IDEwMCAxMTYgMTAwSDc2QzYwLjUzNiAxMDAgNDggMTEyLjUzNiA0OCAxMjhWMTQ0SDQ4VjE0NEgxNDRWMTI4WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwX2xpbmVhcl8xXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjE5MiIgeTI9IjE5MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjY3RUVBIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc2NEJBMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -77,367 +74,12 @@
         /* تحسينات الجوال - جالكسي 25 الترا */
         @media (max-width: 768px) {
             body {
-                font-size: 18px;
-                padding: 15px;
+                font-size: 16px;
+                padding: 10px;
                 -webkit-overflow-scrolling: touch;
                 -webkit-tap-highlight-color: transparent;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
+                background: #f8f9fa;
             }
-            
-            /* إعادة تصميم شامل للتطبيق المتجاوب */
-            
-            /* تصغير الخطوط الأساسية */
-            body {
-                font-size: 14px !important;
-                line-height: 1.4 !important;
-            }
-            
-            /* تصغير العناوين الرئيسية */
-            .main-title {
-                font-size: 1.3rem !important;
-                margin-bottom: 8px !important;
-                font-weight: 600 !important;
-            }
-            
-            .subtitle {
-                font-size: 0.9rem !important;
-                margin-bottom: 6px !important;
-            }
-            
-            /* تصغير أزرار التنقل */
-            .nav-btn {
-                padding: 6px 10px !important;
-                font-size: 0.75rem !important;
-                margin: 2px !important;
-                border-radius: 6px !important;
-                min-height: 32px !important;
-            }
-            
-            /* تصغير الأزرار العامة */
-            .btn {
-                padding: 6px 12px !important;
-                font-size: 0.8rem !important;
-                border-radius: 6px !important;
-                min-height: 34px !important;
-            }
-            
-            /* فرض تخطيط عمود واحد للبطاقات */
-            .stats-grid,
-            #associationsList,
-            #cooperationsList,
-            #homeAssociationsList,
-            #homeCooperationsList {
-                display: block !important;
-                width: 100% !important;
-                column-count: 1 !important;
-            }
-            
-            .association-card,
-            .cooperation-card {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 0 12px 0 !important;
-                display: block !important;
-                float: none !important;
-                break-inside: avoid !important;
-                page-break-inside: avoid !important;
-                padding: 12px !important;
-                font-size: 0.8rem !important;
-            }
-            
-            /* تصغير عناوين البطاقات */
-            .association-card h4,
-            .cooperation-card h4 {
-                font-size: 1rem !important;
-                margin-bottom: 8px !important;
-            }
-            
-            /* تصغير النصوص داخل البطاقات */
-            .association-card div,
-            .cooperation-card div {
-                font-size: 0.75rem !important;
-            }
-            
-            /* تحسين الجداول */
-            .table {
-                font-size: 0.7rem !important;
-                width: 100% !important;
-            }
-            
-            .table th,
-            .table td {
-                padding: 4px 6px !important;
-                font-size: 0.7rem !important;
-                white-space: nowrap !important;
-            }
-            
-            /* تصغير عناوين الأقسام */
-            .section h2 {
-                font-size: 1.1rem !important;
-                margin-bottom: 10px !important;
-                padding: 8px 12px !important;
-            }
-            
-            .section h3 {
-                font-size: 0.95rem !important;
-                margin-bottom: 8px !important;
-            }
-            
-            /* تحسين الحاوي الرئيسي */
-            .container {
-                max-width: 100% !important;
-                padding: 10px !important;
-            }
-            
-            /* تحسين الهيدر */
-            header {
-                padding: 12px !important;
-                margin-bottom: 15px !important;
-                border-radius: 12px !important;
-            }
-            
-            /* تصغير معلومات المستخدم */
-            .user-info {
-                font-size: 0.75rem !important;
-                padding: 4px 8px !important;
-            }
-            
-            /* تحسين النماذج */
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 6px 8px !important;
-                font-size: 0.8rem !important;
-                border-radius: 4px !important;
-            }
-            
-            .form-group label {
-                font-size: 0.8rem !important;
-                margin-bottom: 4px !important;
-            }
-            
-            /* تحسين الإحصائيات */
-            .stat-card {
-                padding: 8px !important;
-                border-radius: 8px !important;
-                margin-bottom: 8px !important;
-            }
-            
-            .stat-number {
-                font-size: 1.2rem !important;
-                margin-bottom: 4px !important;
-            }
-            
-            .stat-label {
-                font-size: 0.7rem !important;
-            }
-            
-            /* تحسين أزرار الإجراءات */
-            .action-btn {
-                padding: 3px 6px !important;
-                font-size: 0.65rem !important;
-                min-width: 24px !important;
-                height: 22px !important;
-                margin: 1px !important;
-            }
-            
-            /* تحسين التنبيهات */
-            .alert {
-                padding: 8px !important;
-                margin: 8px 0 !important;
-                border-radius: 6px !important;
-                font-size: 0.75rem !important;
-            }
-            
-            /* تحسين المودال */
-            .modal-content {
-                padding: 15px !important;
-                border-radius: 10px !important;
-                max-width: 95% !important;
-                font-size: 0.8rem !important;
-            }
-            
-            /* تحسين معلومات المطور */
-            .developer-info {
-                padding: 8px !important;
-                margin: 10px 0 !important;
-                border-radius: 6px !important;
-            }
-            
-            .developer-name {
-                font-size: 0.8rem !important;
-            }
-            
-            .contact-info {
-                 font-size: 0.7rem !important;
-                 line-height: 1.3 !important;
-             }
-             
-             /* استعلامات الوسائط للشاشات المختلفة */
-             
-             /* الشاشات الصغيرة جداً (أقل من 480px) */
-             @media (max-width: 479px) {
-                 body {
-                     font-size: 12px !important;
-                 }
-                 
-                 .main-title {
-                     font-size: 1.1rem !important;
-                 }
-                 
-                 .nav-btn {
-                     padding: 4px 8px !important;
-                     font-size: 0.7rem !important;
-                     margin: 1px !important;
-                 }
-                 
-                 .container {
-                     padding: 5px !important;
-                 }
-                 
-                 .association-card,
-                 .cooperation-card {
-                     padding: 8px !important;
-                     margin-bottom: 8px !important;
-                 }
-             }
-             
-             /* الشاشات الصغيرة (480px - 767px) */
-             @media (min-width: 480px) and (max-width: 767px) {
-                 body {
-                     font-size: 13px !important;
-                 }
-                 
-                 .main-title {
-                     font-size: 1.2rem !important;
-                 }
-                 
-                 .container {
-                     padding: 8px !important;
-                 }
-             }
-             
-             /* الشاشات المتوسطة (768px - 1023px) */
-             @media (min-width: 768px) and (max-width: 1023px) {
-                 body {
-                     font-size: 14px !important;
-                 }
-                 
-                 .stats-grid,
-                 #associationsList,
-                 #cooperationsList {
-                     column-count: 2 !important;
-                     column-gap: 15px !important;
-                 }
-                 
-                 .association-card,
-                 .cooperation-card {
-                     width: 100% !important;
-                     margin-bottom: 15px !important;
-                 }
-             }
-             
-             /* الشاشات الكبيرة (1024px - 1439px) */
-             @media (min-width: 1024px) and (max-width: 1439px) {
-                 body {
-                     font-size: 15px !important;
-                 }
-                 
-                 .stats-grid,
-                 #associationsList,
-                 #cooperationsList {
-                     column-count: 3 !important;
-                     column-gap: 20px !important;
-                 }
-                 
-                 .container {
-                     max-width: 1200px !important;
-                     margin: 0 auto !important;
-                 }
-             }
-             
-             /* الشاشات الكبيرة جداً (1440px وأكثر) */
-             @media (min-width: 1440px) {
-                 body {
-                     font-size: 16px !important;
-                 }
-                 
-                 .stats-grid,
-                 #associationsList,
-                 #cooperationsList {
-                     column-count: 4 !important;
-                     column-gap: 25px !important;
-                 }
-                 
-                 .container {
-                     max-width: 1400px !important;
-                     margin: 0 auto !important;
-                 }
-                 
-                 .main-title {
-                     font-size: 1.5rem !important;
-                 }
-             }
-             
-             /* تحسينات إضافية للتصميم المتجاوب */
-             
-             /* منع التمرير الأفقي */
-             html, body {
-                 overflow-x: hidden !important;
-                 max-width: 100% !important;
-             }
-             
-             /* تحسين الصور */
-             img {
-                 max-width: 100% !important;
-                 height: auto !important;
-             }
-             
-             /* تحسين الجداول للشاشات الصغيرة */
-             @media (max-width: 767px) {
-                 .table-responsive {
-                     overflow-x: auto !important;
-                     -webkit-overflow-scrolling: touch !important;
-                 }
-                 
-                 .table {
-                     min-width: 300px !important;
-                 }
-             }
-             
-             /* تحسين النصوص الطويلة */
-             .text-content {
-                 word-wrap: break-word !important;
-                 overflow-wrap: break-word !important;
-                 hyphens: auto !important;
-             }
-             
-             /* تحسين الأزرار للمس */
-             @media (pointer: coarse) {
-                 .btn, .nav-btn, .action-btn {
-                     min-height: 44px !important;
-                     min-width: 44px !important;
-                 }
-             }
-             
-             /* إخفاء العناصر غير الضرورية على الشاشات الصغيرة */
-             @media (max-width: 479px) {
-                 .hide-on-small {
-                     display: none !important;
-                 }
-             }
-             
-             /* تحسين التباعد للشاشات الصغيرة */
-             @media (max-width: 767px) {
-                 .section {
-                     margin-bottom: 15px !important;
-                 }
-                 
-                 .card {
-                     margin-bottom: 10px !important;
-                 }
-             }
             
             * {
                 -webkit-touch-callout: none;
@@ -457,83 +99,69 @@
             
             .container {
                 max-width: 100%;
-                padding: 20px;
-                margin: 0 auto;
+                padding: 15px;
             }
             
             header {
-                padding: 25px;
-                margin-bottom: 25px;
-                border-radius: 20px;
-                background: rgba(255,255,255,0.95);
-                color: #2c3e50;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-                backdrop-filter: blur(10px);
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 15px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             }
             
             .main-title {
-                font-size: 2rem;
-                margin-bottom: 12px;
+                font-size: 1.5rem;
+                margin-bottom: 8px;
                 line-height: 1.3;
                 text-align: center;
                 font-weight: bold;
-                color: #2c3e50;
             }
             
             .subtitle {
-                font-size: 1.3rem;
-                margin-bottom: 20px;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
                 line-height: 1.4;
                 text-align: center;
-                color: #495057;
             }
             
             .user-info {
-                padding: 20px 25px;
-                margin-bottom: 25px;
-                font-size: 1.3rem;
-                border-radius: 25px;
-                background: rgba(255,255,255,0.95);
+                padding: 15px 20px;
+                margin-bottom: 20px;
+                font-size: 1.1rem;
+                border-radius: 20px;
+                background: rgba(255,255,255,0.9);
                 color: #2c3e50;
                 text-align: center;
                 font-weight: 600;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             }
             
             nav {
-                gap: 12px;
-                padding: 0 10px;
+                gap: 8px;
+                padding: 0 5px;
                 flex-wrap: wrap;
                 justify-content: center;
-                margin-bottom: 30px;
-                display: flex;
+                margin-bottom: 25px;
             }
             
             .nav-btn {
-                padding: 18px 25px;
-                font-size: 1.1rem;
+                padding: 15px 20px;
+                font-size: 1rem;
                 min-width: auto;
                 flex: 1;
-                max-width: calc(50% - 6px);
-                margin-bottom: 12px;
-                border-radius: 20px;
-                min-height: 60px;
+                max-width: calc(50% - 4px);
+                margin-bottom: 8px;
+                border-radius: 15px;
+                min-height: 50px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
                 font-weight: 600;
-                box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-                transition: all 0.3s ease;
-                background: rgba(255,255,255,0.9);
-                color: #2c3e50;
-                border: 2px solid rgba(255,255,255,0.3);
-            }
-            
-            .nav-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                transition: transform 0.2s ease;
             }
             
             .nav-btn:active {
@@ -547,29 +175,22 @@
             }
             
             .section h2 {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
+                font-size: 1.1rem;
+                margin-bottom: 15px;
                 text-align: center;
-                padding: 15px;
-                border-radius: 15px;
-                background: rgba(255,255,255,0.9);
-                color: #2c3e50;
-                border: 2px solid rgba(255,255,255,0.3);
-                box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-                backdrop-filter: blur(10px);
-                font-weight: bold;
+                padding: 8px;
+                border-radius: 8px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
             }
             
             .section h3 {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-                padding: 12px 15px;
-                border-radius: 12px;
-                background: rgba(255,255,255,0.8);
-                color: #495057;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                backdrop-filter: blur(5px);
-                font-weight: 600;
+                font-size: 1rem;
+                margin-bottom: 12px;
+                padding: 6px 10px;
+                border-radius: 6px;
+                background: rgba(102, 126, 234, 0.1);
             }
             
             .form-grid {
@@ -675,39 +296,36 @@
             /* تحسين بطاقات الجمعيات للجوال - جالكسي 25 الترا */
             .association-card, .cooperation-card {
                 width: 100% !important;
-                margin: 0 0 25px 0 !important;
-                padding: 25px !important;
+                margin: 0 0 20px 0 !important;
+                padding: 20px !important;
                 box-sizing: border-box;
                 display: block;
-                border-radius: 20px !important;
+                border-radius: 15px !important;
                 min-height: auto !important;
                 height: auto !important;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
-                background: rgba(255,255,255,0.95) !important;
-                backdrop-filter: blur(10px) !important;
-                border: 2px solid rgba(255,255,255,0.3) !important;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+                background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
             }
             
             .association-details, .cooperation-details {
                 display: grid !important;
                 grid-template-columns: 1fr !important;
-                gap: 20px !important;
+                gap: 15px !important;
             }
             
             .association-header, .cooperation-header {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 15px;
-                margin-bottom: 20px;
-                padding-bottom: 20px;
+                gap: 10px;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
                 border-bottom: 3px solid #007bff;
-                text-align: center;
             }
             
             .association-header h4, .cooperation-header h4 {
-                font-size: 1.8rem !important;
-                margin-bottom: 12px;
+                font-size: 1.4rem !important;
+                margin-bottom: 8px;
                 width: 100%;
                 line-height: 1.3;
                 text-align: center !important;
@@ -717,34 +335,29 @@
             
             .status-badge {
                 align-self: center;
-                font-size: 1.2rem !important;
-                padding: 12px 25px !important;
-                border-radius: 30px !important;
+                font-size: 1rem !important;
+                padding: 8px 20px !important;
+                border-radius: 25px !important;
                 font-weight: bold !important;
-                margin: 15px 0 !important;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+                margin: 10px 0 !important;
             }
             
             .association-details div, .cooperation-details div {
-                padding: 20px !important;
-                border-radius: 15px !important;
-                font-size: 1.3rem !important;
-                background: rgba(248,249,250,0.8) !important;
-                border: 2px solid rgba(233,236,239,0.5) !important;
+                padding: 15px !important;
+                border-radius: 12px !important;
+                font-size: 1.1rem !important;
+                background: #f8f9fa !important;
+                border: 2px solid #e9ecef !important;
                 text-align: center !important;
                 font-weight: 600 !important;
-                min-height: 60px !important;
+                min-height: 50px !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-                backdrop-filter: blur(5px) !important;
             }
             
             .association-details span, .cooperation-details span {
-                font-size: 1.1rem !important;
-                font-weight: 600 !important;
-                color: #495057 !important;
+                font-size: 0.75rem;
             }
             
             .floating-hearts {
@@ -894,150 +507,95 @@
         
         @media (max-width: 480px) {
             body {
-                font-size: 16px;
-                padding: 12px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                min-height: 100vh;
+                font-size: 11px;
+                padding: 2px;
             }
             
             .container {
-                padding: 15px;
-                margin: 0 auto;
+                padding: 4px;
             }
             
             header {
-                padding: 20px;
-                margin-bottom: 20px;
-                border-radius: 18px;
-                background: rgba(255,255,255,0.95);
-                color: #2c3e50;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-                backdrop-filter: blur(10px);
+                padding: 6px;
+                margin-bottom: 6px;
+                border-radius: 8px;
             }
             
             .main-title {
-                font-size: 1.6rem;
-                line-height: 1.3;
-                margin-bottom: 10px;
-                text-align: center;
-                font-weight: bold;
-                color: #2c3e50;
+                font-size: 0.95rem;
+                line-height: 1.2;
+                margin-bottom: 3px;
             }
             
             .subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-                line-height: 1.4;
-                text-align: center;
-                color: #495057;
+                font-size: 0.75rem;
+                margin-bottom: 6px;
+                line-height: 1.3;
             }
             
             .user-info {
-                padding: 15px 20px;
-                margin-bottom: 20px;
-                font-size: 1.1rem;
-                border-radius: 20px;
-                background: rgba(255,255,255,0.95);
-                color: #2c3e50;
-                text-align: center;
-                font-weight: 600;
-                box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-                backdrop-filter: blur(10px);
+                padding: 4px 8px;
+                margin-bottom: 6px;
+                font-size: 0.7rem;
+                border-radius: 12px;
             }
             
             nav {
-                gap: 10px;
-                padding: 0 8px;
+                gap: 2px;
+                padding: 0 1px;
                 justify-content: center;
-                margin-bottom: 25px;
-                display: flex;
-                flex-wrap: wrap;
             }
             
             .nav-btn {
-                padding: 15px 18px;
-                font-size: 0.95rem;
-                max-width: calc(50% - 5px);
-                margin-bottom: 10px;
-                border-radius: 15px;
-                min-height: 55px;
-                line-height: 1.2;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-weight: 600;
-                box-shadow: 0 5px 12px rgba(0,0,0,0.15);
-                background: rgba(255,255,255,0.9);
-                color: #2c3e50;
-                border: 2px solid rgba(255,255,255,0.3);
-                transition: all 0.3s ease;
-            }
-            
-            .nav-btn:active {
-                transform: scale(0.95);
+                padding: 4px 6px;
+                font-size: 0.6rem;
+                max-width: calc(33.33% - 2px);
+                margin-bottom: 2px;
+                border-radius: 8px;
+                min-height: 30px;
+                line-height: 1.1;
             }
             
             .content {
-                padding: 12px;
-                border-radius: 12px;
+                padding: 6px;
+                border-radius: 8px;
             }
             
             .section h2 {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-                padding: 12px;
-                border-radius: 12px;
-                background: rgba(255,255,255,0.9);
-                color: #2c3e50;
-                border: 2px solid rgba(255,255,255,0.3);
-                box-shadow: 0 5px 12px rgba(0,0,0,0.1);
-                backdrop-filter: blur(10px);
-                font-weight: bold;
-                text-align: center;
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+                padding: 6px;
+                border-radius: 6px;
             }
             
             .section h3 {
-                font-size: 1.1rem;
-                margin-bottom: 12px;
-                padding: 10px 12px;
-                border-radius: 10px;
-                background: rgba(255,255,255,0.8);
-                color: #495057;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-                backdrop-filter: blur(5px);
-                font-weight: 600;
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+                padding: 4px 8px;
+                border-radius: 4px;
             }
             
             .form-group {
-                margin-bottom: 12px;
+                margin-bottom: 6px;
             }
             
             .form-group input,
             .form-group select,
             .form-group textarea {
-                padding: 12px;
-                font-size: 1rem;
-                border-radius: 10px;
-                min-height: 45px;
-                background: rgba(255,255,255,0.9);
-                border: 2px solid rgba(233,236,239,0.5);
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                padding: 6px;
+                font-size: 0.75rem;
+                border-radius: 4px;
+                min-height: 35px;
             }
             
             table {
-                font-size: 0.85rem;
-                background: rgba(255,255,255,0.9);
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                font-size: 0.6rem;
             }
             
             table th,
             table td {
-                padding: 8px 6px;
-                font-size: 0.85rem;
-                border-bottom: 1px solid rgba(233,236,239,0.5);
+                padding: 3px 1px;
+                font-size: 0.6rem;
             }
             
             .btn {
@@ -1084,26 +642,23 @@
             /* تحسين إضافي لبطاقات الجمعيات على الشاشات الصغيرة جداً - جالكسي 25 الترا */
             .association-card, .cooperation-card {
                 width: 100% !important;
-                padding: 22px !important;
-                margin: 0 0 22px 0 !important;
-                border-radius: 18px !important;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.18) !important;
-                background: rgba(255,255,255,0.95) !important;
-                backdrop-filter: blur(10px) !important;
-                border: 2px solid rgba(255,255,255,0.3) !important;
+                padding: 18px !important;
+                margin: 0 0 18px 0 !important;
+                border-radius: 12px !important;
+                box-shadow: 0 6px 15px rgba(0,0,0,0.12) !important;
             }
             
             .association-header, .cooperation-header {
-                gap: 12px;
-                margin-bottom: 18px;
-                padding-bottom: 18px;
-                border-bottom: 3px solid #007bff;
+                gap: 8px;
+                margin-bottom: 12px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #007bff;
                 text-align: center;
             }
             
             .association-header h4, .cooperation-header h4 {
-                font-size: 1.5rem !important;
-                margin-bottom: 10px;
+                font-size: 1.2rem !important;
+                margin-bottom: 8px;
                 line-height: 1.3;
                 color: #2c3e50 !important;
                 font-weight: bold !important;
@@ -1111,40 +666,36 @@
             }
             
             .association-details, .cooperation-details {
-                gap: 15px !important;
+                gap: 10px !important;
             }
             
             .association-details div, .cooperation-details div {
-                padding: 18px !important;
-                border-radius: 12px !important;
-                font-size: 1.2rem !important;
-                background: rgba(248,249,250,0.8) !important;
-                border: 2px solid rgba(233,236,239,0.5) !important;
+                padding: 12px !important;
+                border-radius: 8px !important;
+                font-size: 1rem !important;
+                background: #f8f9fa !important;
+                border: 1px solid #e9ecef !important;
                 text-align: center !important;
                 font-weight: 600 !important;
-                min-height: 55px !important;
+                min-height: 45px !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
-                backdrop-filter: blur(5px) !important;
             }
             
             .association-details span, .cooperation-details span {
                 font-size: 1rem !important;
                 font-weight: 600 !important;
-                color: #495057 !important;
             }
             
             .status-badge {
-                font-size: 1.1rem !important;
-                padding: 10px 20px !important;
-                border-radius: 25px !important;
+                font-size: 0.9rem !important;
+                padding: 6px 15px !important;
+                border-radius: 20px !important;
                 font-weight: bold !important;
-                margin: 12px auto !important;
+                margin: 8px auto !important;
                 display: block !important;
                 width: fit-content !important;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
             }
             
             /* تحسين صفحة الدخول للشاشات الصغيرة جداً */
@@ -2665,320 +2216,7 @@
                 padding: 8px 4px;
             }
         }
-
-        /* قواعد خاصة للشاشات عالية الدقة مثل 1440×3120 */
-        @media (min-width: 1200px) and (min-height: 2000px), 
-               (min-width: 1440px), 
-               (min-device-width: 1440px) {
-            body {
-                font-size: 12px;
-                line-height: 1.3;
-            }
-            
-            .container {
-                max-width: 95%;
-                padding: 8px;
-            }
-            
-            .header {
-                padding: 8px 12px;
-                margin-bottom: 12px;
-            }
-            
-            .main-title {
-                font-size: 1.1rem !important;
-                margin-bottom: 4px;
-            }
-            
-            .subtitle {
-                font-size: 0.8rem !important;
-            }
-            
-            .user-info {
-                font-size: 0.7rem;
-                padding: 4px 8px;
-            }
-            
-            .nav {
-                gap: 4px;
-                margin-bottom: 12px;
-            }
-            
-            .nav-btn {
-                padding: 6px 10px !important;
-                font-size: 0.7rem !important;
-                border-radius: 6px;
-                min-height: 28px;
-            }
-            
-            /* تحسين بطاقات الجمعيات والتعاونيات */
-            .association-card,
-            .cooperation-card {
-                width: 100% !important;
-                max-width: none !important;
-                margin-bottom: 8px;
-                padding: 8px;
-                border-radius: 8px;
-            }
-            
-            .association-header,
-            .cooperation-header {
-                gap: 6px;
-                margin-bottom: 6px;
-                padding-bottom: 6px;
-            }
-            
-            .association-header h3,
-            .cooperation-header h3 {
-                font-size: 0.85rem !important;
-                margin: 0;
-            }
-            
-            .association-details,
-            .cooperation-details {
-                padding: 6px;
-                border-radius: 6px;
-                font-size: 0.7rem;
-                line-height: 1.3;
-            }
-            
-            .status-badge {
-                font-size: 0.6rem;
-                padding: 2px 6px;
-                border-radius: 8px;
-            }
-            
-            /* تحسين قائمة الأعضاء */
-            .section h2 {
-                font-size: 0.9rem !important;
-                margin-bottom: 8px;
-                padding: 6px 8px;
-            }
-            
-            .section h3 {
-                font-size: 0.8rem !important;
-                margin-bottom: 6px;
-            }
-            
-            /* تحسين الجداول */
-            .table-container {
-                margin-top: 8px;
-                border-radius: 6px;
-                overflow-x: auto;
-                max-width: 100%;
-            }
-            
-            .table {
-                font-size: 0.65rem;
-                min-width: 100%;
-                width: 100%;
-            }
-            
-            .table th {
-                font-size: 0.7rem;
-                padding: 4px 6px;
-                height: 28px;
-                white-space: nowrap;
-            }
-            
-            .table td {
-                padding: 4px 6px;
-                font-size: 0.65rem;
-                white-space: nowrap;
-            }
-            
-            /* تحسين الأزرار */
-            .btn {
-                padding: 4px 8px !important;
-                font-size: 0.65rem !important;
-                border-radius: 6px;
-                min-height: 24px;
-            }
-            
-            .action-btn {
-                padding: 2px 4px !important;
-                font-size: 0.6rem !important;
-                min-width: 20px;
-                height: 18px;
-                margin: 0.5px !important;
-            }
-            
-            /* تحسين النماذج */
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 4px 6px;
-                font-size: 0.7rem;
-                border-radius: 4px;
-            }
-            
-            .form-group label {
-                font-size: 0.7rem;
-                margin-bottom: 2px;
-            }
-            
-            /* تحسين الإحصائيات */
-            .stats-grid {
-                gap: 6px;
-                margin-bottom: 12px;
-            }
-            
-            .stat-card {
-                padding: 6px;
-                border-radius: 6px;
-            }
-            
-            .stat-number {
-                font-size: 1rem;
-                margin-bottom: 2px;
-            }
-            
-            .stat-label {
-                font-size: 0.65rem;
-            }
-            
-            /* تحسين المودال */
-            .modal-content {
-                padding: 12px;
-                border-radius: 8px;
-                max-width: 90%;
-            }
-            
-            /* تحسين التنبيهات */
-            .alert {
-                padding: 6px;
-                margin: 6px 0;
-                border-radius: 4px;
-                font-size: 0.65rem;
-                line-height: 1.2;
-            }
-            
-            /* إخفاء العناصر غير الضرورية في الشاشات الصغيرة */
-            .developer-info {
-                padding: 6px;
-                margin: 8px 0;
-                border-radius: 4px;
-            }
-            
-            .developer-name {
-                font-size: 0.7rem;
-            }
-            
-            .contact-info {
-                 font-size: 0.65rem;
-                 line-height: 1.2;
-             }
-             
-             /* تحسين تخطيط البطاقات للشاشات عالية الدقة */
-             .stats-grid {
-                 display: grid !important;
-                 grid-template-columns: 1fr !important;
-                 gap: 8px !important;
-                 margin-bottom: 12px !important;
-                 width: 100%;
-             }
-             
-             #associationsList,
-             #cooperationsList {
-                 display: grid !important;
-                 grid-template-columns: 1fr !important;
-                 gap: 8px !important;
-                 width: 100%;
-             }
-             
-             #homeAssociationsList,
-             #homeCooperationsList {
-                 display: grid !important;
-                 grid-template-columns: 1fr !important;
-                 gap: 8px !important;
-                 width: 100%;
-             }
-         }
-         
-         /* قواعد إضافية قوية للشاشات عالية الدقة */
-         @media screen and (min-width: 1440px) {
-             /* فرض تخطيط عمود واحد للبطاقات */
-             .stats-grid,
-             #associationsList,
-             #cooperationsList,
-             #homeAssociationsList,
-             #homeCooperationsList {
-                 display: flex !important;
-                 flex-direction: column !important;
-                 width: 100% !important;
-                 gap: 10px !important;
-             }
-             
-             /* تصغير حجم البطاقات */
-             .association-card,
-             .cooperation-card {
-                 width: 100% !important;
-                 max-width: 100% !important;
-                 margin: 0 !important;
-                 padding: 10px !important;
-                 font-size: 0.8rem !important;
-             }
-             
-             /* تصغير العناوين */
-             .main-title {
-                 font-size: 1.2rem !important;
-             }
-             
-             .subtitle {
-                 font-size: 0.9rem !important;
-             }
-             
-             /* تصغير الأزرار */
-             .btn,
-             .nav-btn {
-                 padding: 6px 12px !important;
-                 font-size: 0.8rem !important;
-             }
-             
-             /* تحسين الجداول */
-             .table {
-                 font-size: 0.7rem !important;
-                 width: 100% !important;
-                 overflow-x: auto !important;
-             }
-             
-             .table th,
-             .table td {
-                 padding: 6px 8px !important;
-                 font-size: 0.7rem !important;
-                 white-space: nowrap !important;
-             }
-         }
-         
-         /* قواعد خاصة للجوالات عالية الدقة */
-         @media screen and (max-device-width: 1440px) and (min-device-width: 1200px) {
-             body {
-                 font-size: 14px !important;
-             }
-             
-             .container {
-                 padding: 10px !important;
-                 max-width: 100% !important;
-             }
-             
-             .stats-grid,
-             #associationsList,
-             #cooperationsList,
-             #homeAssociationsList,
-             #homeCooperationsList {
-                 display: block !important;
-                 width: 100% !important;
-             }
-             
-             .association-card,
-             .cooperation-card {
-                 display: block !important;
-                 width: 100% !important;
-                 margin-bottom: 15px !important;
-                 float: none !important;
-             }
-         }
-     </style>
+    </style>
 </head>
 <body>
     <!-- الخلفية المتحركة -->
@@ -3004,7 +2242,7 @@
             </div>
         </div>
 
-        <form id="loginForm" class="fade-in-up delay-2 form-responsive">
+        <form id="loginForm" class="fade-in-up delay-2">
             <div class="form-group">
                 <label for="loginId">رقم السجل المدني</label>
                 <input type="text" id="loginId" placeholder="أدخل رقم السجل المدني" required>
@@ -3036,7 +2274,7 @@
     </div>
 
     <!-- التطبيق الرئيسي -->
-    <div id="mainApp" class="container container-responsive" style="display: none;">
+    <div id="mainApp" class="container" style="display: none;">
         <header>
             <div class="user-info" id="userWelcome">
                 <i class="fas fa-user"></i> مرحباً بك
@@ -3044,21 +2282,21 @@
             <h1 class="main-title" id="pageTitle">تطبيق جمعية الزواج</h1>
             <p class="subtitle">نظام إدارة شامل لجمعيات الزواج مع جميع الميزات المتقدمة</p>
             
-            <nav id="mainNavigation" class="nav-responsive">
+            <nav id="mainNavigation">
                 <!-- قائمة احتياطية -->
-                <button class="nav-btn btn-responsive active" onclick="showSection('home')">
+                <button class="nav-btn active" onclick="showSection('home')">
                     <i class="fas fa-home"></i> الرئيسية
                 </button>
-                <button class="nav-btn btn-responsive" onclick="showSection('terms')">
+                <button class="nav-btn" onclick="showSection('terms')">
                     <i class="fas fa-file-contract"></i> القوانين
                 </button>
-                <button class="nav-btn btn-responsive btn-danger" onclick="logout()">
+                <button class="nav-btn btn-danger" onclick="logout()">
                     <i class="fas fa-sign-out-alt"></i> خروج
                 </button>
             </nav>
         </header>
 
-        <div class="content content-responsive">
+        <div class="content">
             <!-- قسم الرئيسية -->
             <div id="home" class="section active">
                 <h2><i class="fas fa-tachometer-alt"></i> لوحة التحكم الرئيسية</h2>
@@ -3070,7 +2308,7 @@
                     <h3 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #3498db; padding-bottom: 10px;">
                         <i class="fas fa-building"></i> الجمعيات المسجلة
                     </h3>
-                    <div id="homeAssociationsList" class="stats-grid grid-responsive">
+                    <div id="homeAssociationsList" class="stats-grid">
                         <!-- سيتم ملؤها بـ JavaScript -->
                     </div>
                 </div>
@@ -3080,7 +2318,7 @@
                     <h3 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #27ae60; padding-bottom: 10px;">
                         <i class="fas fa-handshake"></i> المعاونات المسجلة
                     </h3>
-                    <div id="homeCooperationsList" class="stats-grid grid-responsive">
+                    <div id="homeCooperationsList" class="stats-grid">
                         <!-- سيتم ملؤها بـ JavaScript -->
                     </div>
                 </div>
@@ -3116,7 +2354,7 @@
                 <h2>إدارة الجمعيات والمعاونات</h2>
 
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <button class="btn btn-primary btn-responsive" onclick="showAddAssociationModal('association')">
+                    <button class="btn btn-primary" onclick="showAddAssociationModal('association')">
                         <i class="fas fa-plus"></i> إضافة جمعية جديدة
                     </button>
                 </div>
@@ -3132,7 +2370,7 @@
 
                 <!-- أزرار إدارة المعونات -->
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <button class="btn btn-primary btn-responsive" onclick="showAddAssociationModal('cooperation')">
+                    <button class="btn btn-primary" onclick="showAddAssociationModal('cooperation')">
                         <i class="fas fa-handshake"></i> إضافة معاونة جديدة
                     </button>
                 </div>
@@ -3153,7 +2391,7 @@
                 </div>
 
                 <div style="margin-bottom: 20px;">
-                    <input type="text" class="search-box input-responsive" id="memberSearch" placeholder="البحث في الأعضاء...">
+                    <input type="text" class="search-box" id="memberSearch" placeholder="البحث في الأعضاء...">
 
                     <div class="filter-buttons" id="memberFilters">
                         <!-- سيتم ملؤها بـ JavaScript حسب نوع الجمعية -->
@@ -3364,7 +2602,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('addAssociationModal')">&times;</span>
             <h3 id="associationModalTitle">إضافة جمعية جديدة</h3>
-            <form id="associationForm" class="form-responsive">
+            <form id="associationForm">
                 <input type="hidden" id="assocType" value="association">
                 <input type="hidden" id="assocId" value="">
 
@@ -3457,7 +2695,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('addUserModal')">&times;</span>
             <h3>إضافة مستخدم جديد</h3>
-            <form id="userForm" class="form-responsive">
+            <form id="userForm">
                 <div class="form-group">
                     <label for="userName">الاسم الكامل *</label>
                     <input type="text" id="userName" required>
@@ -3493,7 +2731,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('editTermsModal')">&times;</span>
             <h3>تعديل القوانين</h3>
-            <form id="termsForm" class="form-responsive">
+            <form id="termsForm">
                 <div class="form-group">
                     <label for="termsEditor">محتوى القوانين</label>
                     <textarea id="termsEditor" rows="15" style="width: 100%;"></textarea>
@@ -3543,7 +2781,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('addCooperationMemberModal')">&times;</span>
             <h3>تسجيل عضو معاونة جديد</h3>
-            <form id="cooperationMemberForm" class="form-responsive">
+            <form id="cooperationMemberForm">
                 <div class="form-group">
                     <label for="cooperationMemberName">الاسم الكامل *</label>
                     <input type="text" id="cooperationMemberName" required placeholder="أدخل الاسم الكامل">
@@ -3642,7 +2880,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('editMemberModal')">&times;</span>
             <h3 id="editMemberTitle">تعديل العضو</h3>
-            <form id="editMemberForm" class="form-responsive">
+            <form id="editMemberForm">
                 <input type="hidden" id="editMemberId">
                 <div class="form-group">
                     <label for="editMemberName">الاسم الكامل *</label>
@@ -3696,7 +2934,7 @@
             <!-- قسم البيانات الشخصية -->
             <div id="personalInfoSection" class="member-tab-section">
                 <h4><i class="fas fa-user"></i> البيانات الشخصية</h4>
-                <form id="personalInfoForm" class="form-responsive">
+                <form id="personalInfoForm">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="detailName">الاسم الكامل</label>
@@ -3735,7 +2973,7 @@
             <!-- قسم البيانات البنكية -->
             <div id="bankInfoSection" class="member-tab-section" style="display: none;">
                 <h4><i class="fas fa-university"></i> البيانات البنكية</h4>
-                <form id="bankInfoForm" class="form-responsive">
+                <form id="bankInfoForm">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="detailIban">رقم الآيبان (IBAN)</label>
@@ -3762,7 +3000,7 @@
             <!-- قسم بيانات الزواج -->
             <div id="marriageInfoSection" class="member-tab-section" style="display: none;">
                 <h4><i class="fas fa-heart"></i> بيانات الزواج</h4>
-                <form id="marriageInfoForm" class="form-responsive">
+                <form id="marriageInfoForm">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="detailMaritalStatus">حالة الزواج</label>
@@ -3841,7 +3079,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('directSingleRegistrationModal')">&times;</span>
             <h3>تسجيل عضو فردي</h3>
-            <form id="directSingleMemberForm" class="form-responsive">
+            <form id="directSingleMemberForm">
                 <div class="form-group">
                     <label for="directMemberName">الاسم الكامل *</label>
                     <input type="text" id="directMemberName" required>
@@ -4692,7 +3930,7 @@
                                 <h4 style="margin: 0; font-size: 1.2rem; font-weight: bold;">${association.name}</h4>
                                 <span class="status-badge" style="background: ${association.status === 'نشطة' ? '#28a745' : '#dc3545'}; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem; margin-top: 5px; display: inline-block;">${association.status}</span>
                             </div>
-                            <div class="association-stats" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 15px;">
+                            <div class="association-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
                                 <div style="text-align: center; background: rgba(255,255,255,0.1); padding: 8px; border-radius: 8px;">
                                     <div style="font-size: 1.5rem; font-weight: bold;">${assocMembers.length}</div>
                                     <div style="font-size: 0.8rem; opacity: 0.9;">إجمالي الأعضاء</div>
@@ -5076,7 +4314,7 @@
                         <i class="fas fa-handshake"></i> <strong>أعضاء المعاونة:</strong> ${currentAssociation.name}
                         <small style="display: block; margin-top: 5px;">المبالغ حرة لكل عضو حسب قدرته</small>
                     </div>
-                    <table class="table table-responsive" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+                    <table class="table" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
                         <thead>
                             <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 50px;">
                                 <th style="width: 40px; padding: 8px 6px; text-align: center; border: 1px solid #dee2e6; font-size: 0.9rem; font-weight: 600;">م</th>
@@ -6323,7 +5561,7 @@
             document.getElementById('collectionStats').innerHTML = statsHtml;
 
             let html = `
-                <table class="table table-responsive">
+                <table class="table">
                     <thead>
                         <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 50px;">
                             <th style="width: 6%; text-align: center; padding: 8px;">م</th>
@@ -11666,7 +10904,7 @@
             const tableDiv = document.getElementById('directBulkPreviewTable');
             
             let tableHTML = `
-                <table class="data-table table-responsive">
+                <table class="data-table">
                     <thead>
                         <tr>
                             <th>الاسم</th>
