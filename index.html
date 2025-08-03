@@ -82,26 +82,359 @@
                 min-height: 100vh;
             }
             
-            /* قواعد عامة لمنع التكدس على جميع الشاشات */
+            /* إعادة تصميم شامل للتطبيق المتجاوب */
+            
+            /* تصغير الخطوط الأساسية */
+            body {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* تصغير العناوين الرئيسية */
+            .main-title {
+                font-size: 1.3rem !important;
+                margin-bottom: 8px !important;
+                font-weight: 600 !important;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem !important;
+                margin-bottom: 6px !important;
+            }
+            
+            /* تصغير أزرار التنقل */
+            .nav-btn {
+                padding: 6px 10px !important;
+                font-size: 0.75rem !important;
+                margin: 2px !important;
+                border-radius: 6px !important;
+                min-height: 32px !important;
+            }
+            
+            /* تصغير الأزرار العامة */
+            .btn {
+                padding: 6px 12px !important;
+                font-size: 0.8rem !important;
+                border-radius: 6px !important;
+                min-height: 34px !important;
+            }
+            
+            /* فرض تخطيط عمود واحد للبطاقات */
             .stats-grid,
             #associationsList,
             #cooperationsList,
             #homeAssociationsList,
             #homeCooperationsList {
-                display: flex !important;
-                flex-direction: column !important;
+                display: block !important;
                 width: 100% !important;
-                gap: 10px !important;
+                column-count: 1 !important;
             }
             
             .association-card,
             .cooperation-card {
                 width: 100% !important;
                 max-width: 100% !important;
-                margin: 0 0 10px 0 !important;
+                margin: 0 0 12px 0 !important;
                 display: block !important;
                 float: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                padding: 12px !important;
+                font-size: 0.8rem !important;
             }
+            
+            /* تصغير عناوين البطاقات */
+            .association-card h4,
+            .cooperation-card h4 {
+                font-size: 1rem !important;
+                margin-bottom: 8px !important;
+            }
+            
+            /* تصغير النصوص داخل البطاقات */
+            .association-card div,
+            .cooperation-card div {
+                font-size: 0.75rem !important;
+            }
+            
+            /* تحسين الجداول */
+            .table {
+                font-size: 0.7rem !important;
+                width: 100% !important;
+            }
+            
+            .table th,
+            .table td {
+                padding: 4px 6px !important;
+                font-size: 0.7rem !important;
+                white-space: nowrap !important;
+            }
+            
+            /* تصغير عناوين الأقسام */
+            .section h2 {
+                font-size: 1.1rem !important;
+                margin-bottom: 10px !important;
+                padding: 8px 12px !important;
+            }
+            
+            .section h3 {
+                font-size: 0.95rem !important;
+                margin-bottom: 8px !important;
+            }
+            
+            /* تحسين الحاوي الرئيسي */
+            .container {
+                max-width: 100% !important;
+                padding: 10px !important;
+            }
+            
+            /* تحسين الهيدر */
+            header {
+                padding: 12px !important;
+                margin-bottom: 15px !important;
+                border-radius: 12px !important;
+            }
+            
+            /* تصغير معلومات المستخدم */
+            .user-info {
+                font-size: 0.75rem !important;
+                padding: 4px 8px !important;
+            }
+            
+            /* تحسين النماذج */
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 6px 8px !important;
+                font-size: 0.8rem !important;
+                border-radius: 4px !important;
+            }
+            
+            .form-group label {
+                font-size: 0.8rem !important;
+                margin-bottom: 4px !important;
+            }
+            
+            /* تحسين الإحصائيات */
+            .stat-card {
+                padding: 8px !important;
+                border-radius: 8px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            .stat-number {
+                font-size: 1.2rem !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .stat-label {
+                font-size: 0.7rem !important;
+            }
+            
+            /* تحسين أزرار الإجراءات */
+            .action-btn {
+                padding: 3px 6px !important;
+                font-size: 0.65rem !important;
+                min-width: 24px !important;
+                height: 22px !important;
+                margin: 1px !important;
+            }
+            
+            /* تحسين التنبيهات */
+            .alert {
+                padding: 8px !important;
+                margin: 8px 0 !important;
+                border-radius: 6px !important;
+                font-size: 0.75rem !important;
+            }
+            
+            /* تحسين المودال */
+            .modal-content {
+                padding: 15px !important;
+                border-radius: 10px !important;
+                max-width: 95% !important;
+                font-size: 0.8rem !important;
+            }
+            
+            /* تحسين معلومات المطور */
+            .developer-info {
+                padding: 8px !important;
+                margin: 10px 0 !important;
+                border-radius: 6px !important;
+            }
+            
+            .developer-name {
+                font-size: 0.8rem !important;
+            }
+            
+            .contact-info {
+                 font-size: 0.7rem !important;
+                 line-height: 1.3 !important;
+             }
+             
+             /* استعلامات الوسائط للشاشات المختلفة */
+             
+             /* الشاشات الصغيرة جداً (أقل من 480px) */
+             @media (max-width: 479px) {
+                 body {
+                     font-size: 12px !important;
+                 }
+                 
+                 .main-title {
+                     font-size: 1.1rem !important;
+                 }
+                 
+                 .nav-btn {
+                     padding: 4px 8px !important;
+                     font-size: 0.7rem !important;
+                     margin: 1px !important;
+                 }
+                 
+                 .container {
+                     padding: 5px !important;
+                 }
+                 
+                 .association-card,
+                 .cooperation-card {
+                     padding: 8px !important;
+                     margin-bottom: 8px !important;
+                 }
+             }
+             
+             /* الشاشات الصغيرة (480px - 767px) */
+             @media (min-width: 480px) and (max-width: 767px) {
+                 body {
+                     font-size: 13px !important;
+                 }
+                 
+                 .main-title {
+                     font-size: 1.2rem !important;
+                 }
+                 
+                 .container {
+                     padding: 8px !important;
+                 }
+             }
+             
+             /* الشاشات المتوسطة (768px - 1023px) */
+             @media (min-width: 768px) and (max-width: 1023px) {
+                 body {
+                     font-size: 14px !important;
+                 }
+                 
+                 .stats-grid,
+                 #associationsList,
+                 #cooperationsList {
+                     column-count: 2 !important;
+                     column-gap: 15px !important;
+                 }
+                 
+                 .association-card,
+                 .cooperation-card {
+                     width: 100% !important;
+                     margin-bottom: 15px !important;
+                 }
+             }
+             
+             /* الشاشات الكبيرة (1024px - 1439px) */
+             @media (min-width: 1024px) and (max-width: 1439px) {
+                 body {
+                     font-size: 15px !important;
+                 }
+                 
+                 .stats-grid,
+                 #associationsList,
+                 #cooperationsList {
+                     column-count: 3 !important;
+                     column-gap: 20px !important;
+                 }
+                 
+                 .container {
+                     max-width: 1200px !important;
+                     margin: 0 auto !important;
+                 }
+             }
+             
+             /* الشاشات الكبيرة جداً (1440px وأكثر) */
+             @media (min-width: 1440px) {
+                 body {
+                     font-size: 16px !important;
+                 }
+                 
+                 .stats-grid,
+                 #associationsList,
+                 #cooperationsList {
+                     column-count: 4 !important;
+                     column-gap: 25px !important;
+                 }
+                 
+                 .container {
+                     max-width: 1400px !important;
+                     margin: 0 auto !important;
+                 }
+                 
+                 .main-title {
+                     font-size: 1.5rem !important;
+                 }
+             }
+             
+             /* تحسينات إضافية للتصميم المتجاوب */
+             
+             /* منع التمرير الأفقي */
+             html, body {
+                 overflow-x: hidden !important;
+                 max-width: 100% !important;
+             }
+             
+             /* تحسين الصور */
+             img {
+                 max-width: 100% !important;
+                 height: auto !important;
+             }
+             
+             /* تحسين الجداول للشاشات الصغيرة */
+             @media (max-width: 767px) {
+                 .table-responsive {
+                     overflow-x: auto !important;
+                     -webkit-overflow-scrolling: touch !important;
+                 }
+                 
+                 .table {
+                     min-width: 300px !important;
+                 }
+             }
+             
+             /* تحسين النصوص الطويلة */
+             .text-content {
+                 word-wrap: break-word !important;
+                 overflow-wrap: break-word !important;
+                 hyphens: auto !important;
+             }
+             
+             /* تحسين الأزرار للمس */
+             @media (pointer: coarse) {
+                 .btn, .nav-btn, .action-btn {
+                     min-height: 44px !important;
+                     min-width: 44px !important;
+                 }
+             }
+             
+             /* إخفاء العناصر غير الضرورية على الشاشات الصغيرة */
+             @media (max-width: 479px) {
+                 .hide-on-small {
+                     display: none !important;
+                 }
+             }
+             
+             /* تحسين التباعد للشاشات الصغيرة */
+             @media (max-width: 767px) {
+                 .section {
+                     margin-bottom: 15px !important;
+                 }
+                 
+                 .card {
+                     margin-bottom: 10px !important;
+                 }
+             }
             
             * {
                 -webkit-touch-callout: none;
