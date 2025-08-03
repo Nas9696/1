@@ -48,6 +48,9 @@
     <meta name="msapplication-tap-highlight" content="no">
     
     <!-- Apple Touch Icons -->
+    
+    <!-- ملف CSS المتجاوب المحسن -->
+    <link rel="stylesheet" href="responsive.css">
     <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik05NiA0OEM4MC41MzYgNDggNjggNjAuNTM2IDY4IDc2QzY4IDkxLjQ2NCA4MC41MzYgMTA0IDk2IDEwNEMxMTEuNDY0IDEwNCAxMjQgOTEuNDY0IDEyNCA3NkMxMjQgNjAuNTM2IDExMS40NjQgNDggOTYgNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTQ0IDEyOEMxNDQgMTEyLjUzNiAxMzEuNDY0IDEwMCAxMTYgMTAwSDc2QzYwLjUzNiAxMDAgNDggMTEyLjUzNiA0OCAxMjhWMTQ0SDQ4VjE0NEgxNDRWMTI4WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwX2xpbmVhcl8xXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjE5MiIgeTI9IjE5MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjY3RUVBIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc2NEJBMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -3001,7 +3004,7 @@
             </div>
         </div>
 
-        <form id="loginForm" class="fade-in-up delay-2">
+        <form id="loginForm" class="fade-in-up delay-2 form-responsive">
             <div class="form-group">
                 <label for="loginId">رقم السجل المدني</label>
                 <input type="text" id="loginId" placeholder="أدخل رقم السجل المدني" required>
@@ -3033,7 +3036,7 @@
     </div>
 
     <!-- التطبيق الرئيسي -->
-    <div id="mainApp" class="container" style="display: none;">
+    <div id="mainApp" class="container container-responsive" style="display: none;">
         <header>
             <div class="user-info" id="userWelcome">
                 <i class="fas fa-user"></i> مرحباً بك
@@ -3041,21 +3044,21 @@
             <h1 class="main-title" id="pageTitle">تطبيق جمعية الزواج</h1>
             <p class="subtitle">نظام إدارة شامل لجمعيات الزواج مع جميع الميزات المتقدمة</p>
             
-            <nav id="mainNavigation">
+            <nav id="mainNavigation" class="nav-responsive">
                 <!-- قائمة احتياطية -->
-                <button class="nav-btn active" onclick="showSection('home')">
+                <button class="nav-btn btn-responsive active" onclick="showSection('home')">
                     <i class="fas fa-home"></i> الرئيسية
                 </button>
-                <button class="nav-btn" onclick="showSection('terms')">
+                <button class="nav-btn btn-responsive" onclick="showSection('terms')">
                     <i class="fas fa-file-contract"></i> القوانين
                 </button>
-                <button class="nav-btn btn-danger" onclick="logout()">
+                <button class="nav-btn btn-responsive btn-danger" onclick="logout()">
                     <i class="fas fa-sign-out-alt"></i> خروج
                 </button>
             </nav>
         </header>
 
-        <div class="content">
+        <div class="content content-responsive">
             <!-- قسم الرئيسية -->
             <div id="home" class="section active">
                 <h2><i class="fas fa-tachometer-alt"></i> لوحة التحكم الرئيسية</h2>
@@ -3067,7 +3070,7 @@
                     <h3 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #3498db; padding-bottom: 10px;">
                         <i class="fas fa-building"></i> الجمعيات المسجلة
                     </h3>
-                    <div id="homeAssociationsList" class="stats-grid">
+                    <div id="homeAssociationsList" class="stats-grid grid-responsive">
                         <!-- سيتم ملؤها بـ JavaScript -->
                     </div>
                 </div>
@@ -3077,7 +3080,7 @@
                     <h3 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 2px solid #27ae60; padding-bottom: 10px;">
                         <i class="fas fa-handshake"></i> المعاونات المسجلة
                     </h3>
-                    <div id="homeCooperationsList" class="stats-grid">
+                    <div id="homeCooperationsList" class="stats-grid grid-responsive">
                         <!-- سيتم ملؤها بـ JavaScript -->
                     </div>
                 </div>
@@ -3113,7 +3116,7 @@
                 <h2>إدارة الجمعيات والمعاونات</h2>
 
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <button class="btn btn-primary" onclick="showAddAssociationModal('association')">
+                    <button class="btn btn-primary btn-responsive" onclick="showAddAssociationModal('association')">
                         <i class="fas fa-plus"></i> إضافة جمعية جديدة
                     </button>
                 </div>
@@ -3129,7 +3132,7 @@
 
                 <!-- أزرار إدارة المعونات -->
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <button class="btn btn-primary" onclick="showAddAssociationModal('cooperation')">
+                    <button class="btn btn-primary btn-responsive" onclick="showAddAssociationModal('cooperation')">
                         <i class="fas fa-handshake"></i> إضافة معاونة جديدة
                     </button>
                 </div>
@@ -3150,7 +3153,7 @@
                 </div>
 
                 <div style="margin-bottom: 20px;">
-                    <input type="text" class="search-box" id="memberSearch" placeholder="البحث في الأعضاء...">
+                    <input type="text" class="search-box input-responsive" id="memberSearch" placeholder="البحث في الأعضاء...">
 
                     <div class="filter-buttons" id="memberFilters">
                         <!-- سيتم ملؤها بـ JavaScript حسب نوع الجمعية -->
@@ -3361,7 +3364,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('addAssociationModal')">&times;</span>
             <h3 id="associationModalTitle">إضافة جمعية جديدة</h3>
-            <form id="associationForm">
+            <form id="associationForm" class="form-responsive">
                 <input type="hidden" id="assocType" value="association">
                 <input type="hidden" id="assocId" value="">
 
@@ -3454,7 +3457,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('addUserModal')">&times;</span>
             <h3>إضافة مستخدم جديد</h3>
-            <form id="userForm">
+            <form id="userForm" class="form-responsive">
                 <div class="form-group">
                     <label for="userName">الاسم الكامل *</label>
                     <input type="text" id="userName" required>
@@ -3490,7 +3493,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('editTermsModal')">&times;</span>
             <h3>تعديل القوانين</h3>
-            <form id="termsForm">
+            <form id="termsForm" class="form-responsive">
                 <div class="form-group">
                     <label for="termsEditor">محتوى القوانين</label>
                     <textarea id="termsEditor" rows="15" style="width: 100%;"></textarea>
@@ -3540,7 +3543,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('addCooperationMemberModal')">&times;</span>
             <h3>تسجيل عضو معاونة جديد</h3>
-            <form id="cooperationMemberForm">
+            <form id="cooperationMemberForm" class="form-responsive">
                 <div class="form-group">
                     <label for="cooperationMemberName">الاسم الكامل *</label>
                     <input type="text" id="cooperationMemberName" required placeholder="أدخل الاسم الكامل">
@@ -3639,7 +3642,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('editMemberModal')">&times;</span>
             <h3 id="editMemberTitle">تعديل العضو</h3>
-            <form id="editMemberForm">
+            <form id="editMemberForm" class="form-responsive">
                 <input type="hidden" id="editMemberId">
                 <div class="form-group">
                     <label for="editMemberName">الاسم الكامل *</label>
@@ -3693,7 +3696,7 @@
             <!-- قسم البيانات الشخصية -->
             <div id="personalInfoSection" class="member-tab-section">
                 <h4><i class="fas fa-user"></i> البيانات الشخصية</h4>
-                <form id="personalInfoForm">
+                <form id="personalInfoForm" class="form-responsive">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="detailName">الاسم الكامل</label>
@@ -3732,7 +3735,7 @@
             <!-- قسم البيانات البنكية -->
             <div id="bankInfoSection" class="member-tab-section" style="display: none;">
                 <h4><i class="fas fa-university"></i> البيانات البنكية</h4>
-                <form id="bankInfoForm">
+                <form id="bankInfoForm" class="form-responsive">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="detailIban">رقم الآيبان (IBAN)</label>
@@ -3759,7 +3762,7 @@
             <!-- قسم بيانات الزواج -->
             <div id="marriageInfoSection" class="member-tab-section" style="display: none;">
                 <h4><i class="fas fa-heart"></i> بيانات الزواج</h4>
-                <form id="marriageInfoForm">
+                <form id="marriageInfoForm" class="form-responsive">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="detailMaritalStatus">حالة الزواج</label>
@@ -3838,7 +3841,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('directSingleRegistrationModal')">&times;</span>
             <h3>تسجيل عضو فردي</h3>
-            <form id="directSingleMemberForm">
+            <form id="directSingleMemberForm" class="form-responsive">
                 <div class="form-group">
                     <label for="directMemberName">الاسم الكامل *</label>
                     <input type="text" id="directMemberName" required>
@@ -5073,7 +5076,7 @@
                         <i class="fas fa-handshake"></i> <strong>أعضاء المعاونة:</strong> ${currentAssociation.name}
                         <small style="display: block; margin-top: 5px;">المبالغ حرة لكل عضو حسب قدرته</small>
                     </div>
-                    <table class="table" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+                    <table class="table table-responsive" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
                         <thead>
                             <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 50px;">
                                 <th style="width: 40px; padding: 8px 6px; text-align: center; border: 1px solid #dee2e6; font-size: 0.9rem; font-weight: 600;">م</th>
@@ -6320,7 +6323,7 @@
             document.getElementById('collectionStats').innerHTML = statsHtml;
 
             let html = `
-                <table class="table">
+                <table class="table table-responsive">
                     <thead>
                         <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 50px;">
                             <th style="width: 6%; text-align: center; padding: 8px;">م</th>
@@ -11663,7 +11666,7 @@
             const tableDiv = document.getElementById('directBulkPreviewTable');
             
             let tableHTML = `
-                <table class="data-table">
+                <table class="data-table table-responsive">
                     <thead>
                         <tr>
                             <th>الاسم</th>
