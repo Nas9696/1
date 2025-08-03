@@ -4314,6 +4314,7 @@
                         <i class="fas fa-handshake"></i> <strong>أعضاء المعاونة:</strong> ${currentAssociation.name}
                         <small style="display: block; margin-top: 5px;">المبالغ حرة لكل عضو حسب قدرته</small>
                     </div>
+                    <div class="table-responsive">
                     <table class="table" style="border-collapse: collapse; width: 100%; margin-top: 20px;">
                         <thead>
                             <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 50px;">
@@ -4477,6 +4478,7 @@
                 html += `
                         </tbody>
                     </table>
+                    </div>
                 `;
             } else {
                 // جدول الجمعيات العادي
@@ -4603,7 +4605,7 @@
                     `;
                 });
 
-                html += '</tbody></table>';
+                html += '</tbody></table></div>';
             }
 
             container.innerHTML = html;
@@ -5561,6 +5563,7 @@
             document.getElementById('collectionStats').innerHTML = statsHtml;
 
             let html = `
+                <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 50px;">
@@ -5782,6 +5785,7 @@
             html += `
                     </tbody>
                 </table>
+                </div>
             `;
 
             container.innerHTML = html;
@@ -6609,6 +6613,7 @@
                         ${generatedPhones > 0 ? `• تم توليد ${generatedPhones} رقم هاتف تلقائياً` : ''}
                     </small>
                 </div>
+                <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -6638,7 +6643,7 @@
                 `;
             });
 
-            html += '</tbody></table>';
+            html += '</tbody></table></div>';
             container.innerHTML = html;
             document.getElementById('bulkPreview').style.display = 'block';
         }
@@ -7349,6 +7354,7 @@
             }
 
             html += `
+                <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -7378,7 +7384,7 @@
                 `;
             });
 
-            html += '</tbody></table>';
+            html += '</tbody></table></div>';
             container.innerHTML = html;
             document.getElementById('cooperationPreview').style.display = 'block';
         }
@@ -7681,6 +7687,7 @@
                             <i class="fas fa-arrow-up"></i> المبالغ المدفوعة للمتزوجين (${paidCollections.length})
                         </h5>
                         ${paidCollections.length > 0 ? `
+                            <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -7706,6 +7713,7 @@
                                     }).join('')}
                                 </tbody>
                             </table>
+                            </div>
                         ` : '<p style="color: #7f8c8d; text-align: center;">لم يدفع أي مبالغ بعد</p>'}
                     </div>
 
@@ -7714,6 +7722,7 @@
                             <i class="fas fa-arrow-down"></i> المبالغ المستلمة من الأعضاء (${receivedCollections.length})
                         </h5>
                         ${receivedCollections.length > 0 ? `
+                            <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -7739,6 +7748,7 @@
                                     }).join('')}
                                 </tbody>
                             </table>
+                            </div>
                         ` : '<p style="color: #7f8c8d; text-align: center;">لم يستلم أي مبالغ بعد</p>'}
                     </div>
                 `;
@@ -7931,6 +7941,7 @@
             }
 
             let html = `
+                <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -7954,7 +7965,7 @@
                 `;
             });
 
-            html += '</tbody></table>';
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
@@ -8047,6 +8058,7 @@
             }
 
             let html = `
+                <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -8072,7 +8084,7 @@
                 `;
             });
 
-            html += '</tbody></table>';
+            html += '</tbody></table></div>';
             container.innerHTML = html;
         }
 
