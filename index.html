@@ -2515,6 +2515,9 @@
                     <button class="btn" onclick="generateUserIds()">
                         <i class="fas fa-id-card"></i> توليد أرقام سجل للأعضاء
                     </button>
+                    <button class="btn btn-success" onclick="exportDatabaseToFiles()">
+                        <i class="fas fa-download"></i> تصدير قاعدة البيانات
+                    </button>
                 </div>
 
                 <div class="table-container">
@@ -3203,11 +3206,11 @@
         }
 
         // تهيئة التطبيق
-        window.addEventListener('load', function() {
+        window.addEventListener('load', async function() {
             // التحقق من وجود جلسة نشطة أولاً
             const hasActiveSession = checkActiveSession();
             if (!hasActiveSession) {
-                initializeApp();
+                await initializeApp();
             }
 
             // جعل الدوال متاحة عالمياً
@@ -3323,9 +3326,11 @@
             currentAssociation = null;
         }
 
-        function initializeApp() {
-            // تحميل البيانات من localStorage أولاً
-            users = JSON.parse(localStorage.getItem('users') || '[]');
+        async function initializeApp() {
+            // تهيئة نظام قاعدة البيانات الجديد
+            await initializeDatabaseSystem();
+            
+            // تحميل باقي البيانات من localStorage
             associations = JSON.parse(localStorage.getItem('associations') || '[]');
             members = JSON.parse(localStorage.getItem('members') || '[]');
             collections = JSON.parse(localStorage.getItem('collections') || '[]');
@@ -3374,7 +3379,7 @@
         }
 
         // وظائف تسجيل الدخول
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const loginId = document.getElementById('loginId').value.trim();
 
@@ -3417,6 +3422,8 @@
                 login();
             } else {
                 // تحديث قائمة المستخدمين والأعضاء قبل البحث
+                // تحميل البيانات من النظام الجديد
+                await initializeDatabaseSystem();
                 users = JSON.parse(localStorage.getItem('users') || '[]');
                 members = JSON.parse(localStorage.getItem('members') || '[]');
                 console.log('البحث عن المستخدم برقم السجل المدني:', loginId);
@@ -3433,19 +3440,8 @@
                     console.log('البحث في الأعضاء:', member ? 'تم العثور على العضو' : 'لم يتم العثور على العضو');
                     
                     if (member) {
-                        // إنشاء مستخدم جديد من بيانات العضو
-                        user = {
-                            id: member.id,
-                            name: member.name,
-                            role: 'member',
-                            phone: member.phone,
-                            civilId: member.civilId,
-                            createdAt: new Date().toISOString(),
-                            lastLogin: new Date().toISOString()
-                        };
-                        
-                        users.push(user);
-                        saveUsers();
+                        // إنشاء مستخدم جديد من بيانات العضو باستخدام النظام الجديد
+                        user = createMemberAccount(member);
                         console.log('تم إنشاء مستخدم جديد من بيانات العضو');
                     }
                 }
@@ -3703,11 +3699,13 @@
         }
 
         function saveMembers() {
-            localStorage.setItem('members', JSON.stringify(members));
+            // استخدام النظام الجديد لحفظ البيانات
+            saveMembersToDatabase();
         }
 
         function saveUsers() {
-            localStorage.setItem('users', JSON.stringify(users));
+            // استخدام النظام الجديد لحفظ البيانات
+            saveUsersToDatabase();
         }
 
         function saveCollections() {
@@ -3716,6 +3714,216 @@
 
         function saveTerms() {
             localStorage.setItem('terms', terms);
+        }
+
+        // وظائف قاعدة البيانات الجديدة
+        async function loadUsersFromDatabase() {
+            try {
+                // محاولة تحميل المستخدمين من ملف قاعدة البيانات
+                const response = await fetch('./database/users.json');
+                if (response.ok) {
+                    const databaseUsers = await response.json();
+                    console.log('تم تحميل المستخدمين من قاعدة البيانات:', databaseUsers.length);
+                    return databaseUsers;
+                }
+            } catch (error) {
+                console.log('لم يتم العثور على ملف قاعدة البيانات، سيتم استخدام localStorage');
+            }
+            
+            // في حالة عدم وجود ملف قاعدة البيانات، استخدام localStorage
+            return JSON.parse(localStorage.getItem('users') || '[]');
+        }
+
+        async function loadAdminsFromDatabase() {
+            try {
+                const response = await fetch('./database/admins.json');
+                if (response.ok) {
+                    const databaseAdmins = await response.json();
+                    console.log('تم تحميل المديرين من قاعدة البيانات:', databaseAdmins.length);
+                    return databaseAdmins;
+                }
+            } catch (error) {
+                console.log('لم يتم العثور على ملف المديرين، سيتم إنشاء مدير افتراضي');
+            }
+            
+            // إنشاء مدير افتراضي
+            return [{
+                id: 'admin',
+                name: 'المدير العام',
+                role: 'admin',
+                phone: '',
+                civilId: 'admin',
+                createdAt: new Date().toISOString(),
+                lastLogin: new Date().toISOString(),
+                permissions: ['all']
+            }];
+        }
+
+        function saveUsersToDatabase() {
+            // حفظ في localStorage كما هو معتاد
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            // إنشاء رابط تحميل لحفظ البيانات في ملف
+            const dataStr = JSON.stringify(users, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            // إنشاء رابط مؤقت للتحميل
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'users_backup.json';
+            
+            console.log('تم حفظ نسخة احتياطية من بيانات المستخدمين');
+        }
+
+        function exportDatabaseToFiles() {
+            // تصدير جميع البيانات إلى ملفات منفصلة
+            const data = {
+                users: users,
+                admins: users.filter(u => u.role === 'admin'),
+                members: members,
+                associations: associations,
+                collections: collections,
+                terms: terms
+            };
+            
+            Object.keys(data).forEach(key => {
+                const dataStr = JSON.stringify(data[key], null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `${key}.json`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            });
+            
+            showAlert('تم تصدير جميع ملفات قاعدة البيانات بنجاح!', 'success');
+        }
+
+        async function loadMembersFromDatabase() {
+            try {
+                const response = await fetch('./database/members.json');
+                if (response.ok) {
+                    const databaseMembers = await response.json();
+                    console.log('تم تحميل الأعضاء من قاعدة البيانات:', databaseMembers.length);
+                    return databaseMembers;
+                }
+            } catch (error) {
+                console.log('لم يتم العثور على ملف الأعضاء، سيتم استخدام البيانات المحلية');
+            }
+            
+            // في حالة عدم وجود الملف، إرجاع البيانات المحلية
+            return JSON.parse(localStorage.getItem('members') || '[]');
+        }
+
+        function saveMembersToDatabase() {
+            // حفظ في localStorage كما هو معتاد
+            localStorage.setItem('members', JSON.stringify(members));
+            
+            // إنشاء رابط تحميل لحفظ البيانات في ملف
+            const dataStr = JSON.stringify(members, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            // إنشاء رابط مؤقت للتحميل
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'members_backup.json';
+            
+            console.log('تم حفظ نسخة احتياطية من بيانات الأعضاء');
+        }
+
+        function createMemberAccount(member) {
+            // إنشاء حساب للعضو إذا لم يكن موجوداً
+            const existingUser = users.find(u => u.civilId === member.civilId);
+            
+            if (!existingUser && member.civilId) {
+                const newUser = {
+                    id: member.id,
+                    name: member.name,
+                    role: 'member',
+                    phone: member.phone,
+                    civilId: member.civilId,
+                    createdAt: new Date().toISOString(),
+                    lastLogin: null,
+                    memberData: {
+                        associationId: member.associationId,
+                        amount: member.amount,
+                        maritalStatus: member.maritalStatus,
+                        weddingDate: member.weddingDate,
+                        bankName: member.bankName,
+                        accountNumber: member.accountNumber
+                    }
+                };
+                
+                users.push(newUser);
+                saveUsersToDatabase();
+                console.log('تم إنشاء حساب جديد للعضو:', member.name);
+                return newUser;
+            }
+            
+            return existingUser;
+        }
+
+        function updateMemberAccount(member) {
+            // تحديث بيانات حساب العضو
+            const userIndex = users.findIndex(u => u.civilId === member.civilId);
+            
+            if (userIndex !== -1) {
+                users[userIndex].name = member.name;
+                users[userIndex].phone = member.phone;
+                users[userIndex].memberData = {
+                    associationId: member.associationId,
+                    amount: member.amount,
+                    maritalStatus: member.maritalStatus,
+                    weddingDate: member.weddingDate,
+                    bankName: member.bankName,
+                    accountNumber: member.accountNumber
+                };
+                
+                saveUsersToDatabase();
+                console.log('تم تحديث بيانات حساب العضو:', member.name);
+            }
+        }
+
+        async function initializeDatabaseSystem() {
+            try {
+                // تحميل المستخدمين والمديرين من قاعدة البيانات
+                const databaseUsers = await loadUsersFromDatabase();
+                const databaseAdmins = await loadAdminsFromDatabase();
+                const databaseMembers = await loadMembersFromDatabase();
+                
+                // دمج بيانات المستخدمين
+                users = [...databaseUsers, ...databaseAdmins];
+                
+                // إزالة التكرارات
+                users = users.filter((user, index, self) => 
+                    index === self.findIndex(u => u.id === user.id)
+                );
+                
+                // تحديث بيانات الأعضاء
+                members = databaseMembers;
+                
+                // إنشاء حسابات للأعضاء الذين لديهم أرقام مدنية ولكن ليس لديهم حسابات
+                members.forEach(member => {
+                    if (member.civilId && !users.find(u => u.civilId === member.civilId)) {
+                        createMemberAccount(member);
+                    }
+                });
+                
+                console.log('تم تهيئة نظام قاعدة البيانات بنجاح');
+                console.log('إجمالي المستخدمين:', users.length);
+                console.log('إجمالي الأعضاء:', members.length);
+                
+            } catch (error) {
+                console.error('خطأ في تهيئة نظام قاعدة البيانات:', error);
+                // في حالة الخطأ، استخدام البيانات المحلية
+                users = JSON.parse(localStorage.getItem('users') || '[]');
+                members = JSON.parse(localStorage.getItem('members') || '[]');
+            }
         }
 
         // وظائف الإحصائيات
@@ -4808,7 +5016,7 @@
         function updateMemberBank(memberId, bank) {
             const member = members.find(m => m.id === memberId);
             if (member) {
-                member.bank = bank;
+                member.bank = matchBankName(bank);
                 saveMembers();
                 updateCooperationStats(); // تحديث الإحصائيات فقط
             }
@@ -4885,14 +5093,15 @@
                 }
 
                 if (bank && bank !== '') {
-                    member.bank = bank;
+                    const matchedBank = matchBankName(bank);
+                    member.bank = matchedBank;
                     updated = true;
                     fieldName = 'البنك';
                     
                     // تحديث قائمة البنك في الواجهة
                     const bankSelect = document.querySelector(`#member-row-${member.id} select[onchange*="updateMemberBank"]`);
                     if (bankSelect && !bankSelect.disabled) {
-                        bankSelect.value = bank;
+                        bankSelect.value = matchedBank;
                     }
                 }
 
@@ -5851,7 +6060,11 @@
                 collections.push(collection);
             }
 
-            collection[field] = value;
+            if (field === 'bank') {
+                collection[field] = matchBankName(value);
+            } else {
+                collection[field] = value;
+            }
             collection.updatedAt = new Date().toISOString();
 
             localStorage.setItem('associationCollections', JSON.stringify(collections));
@@ -6954,12 +7167,13 @@
         function applyBulkBank(beneficiaryId, bank) {
             if (!bank || bank === '') return;
 
+            const matchedBank = matchBankName(bank);
             const associationMembers = filterMembersByAssociation();
             associationMembers.forEach(member => {
                 const bankSelect = document.getElementById(`bank_${member.id}`);
                 if (bankSelect && !bankSelect.disabled) {
-                    bankSelect.value = bank;
-                    updateCollectionData(member.id, beneficiaryId, 'bank', bank);
+                    bankSelect.value = matchedBank;
+                    updateCollectionData(member.id, beneficiaryId, 'bank', matchedBank);
                 }
             });
 
@@ -7249,7 +7463,8 @@
                 memberData.transferType = filteredColumns[2].trim(); // العمود الثالث: نوع التحويل
             }
             if (filteredColumns.length >= 4) {
-                memberData.bank = filteredColumns[3].trim(); // العمود الرابع: البنك
+                const bankInput = filteredColumns[3].trim();
+                memberData.bank = matchBankName(bankInput); // العمود الرابع: البنك مع التحويل الذكي
             }
             if (filteredColumns.length >= 5) {
                 memberData.receiver = filteredColumns[4].trim(); // العمود الخامس: المستلم
@@ -7277,6 +7492,135 @@
         function isBankColumn(text) {
             const banks = ['الراجحي', 'الأهلي', 'سامبا', 'الرياض', 'البلاد', 'الجزيرة', 'الإنماء', 'ساب', 'العربي', 'الفرنسي'];
             return banks.some(bank => text.includes(bank)) || text.includes('بنك');
+        }
+
+        // دالة مرنة للتعرف على أسماء البنوك الجزئية وتحويلها للاسم الكامل
+        function matchBankName(partialBankName) {
+            if (!partialBankName || typeof partialBankName !== 'string') {
+                return partialBankName;
+            }
+
+            const input = partialBankName.trim().toLowerCase();
+            
+            // قاموس مطابقة البنوك - من الاسم الجزئي إلى الاسم الكامل
+            const bankMappings = {
+                // البنك الأهلي السعودي
+                'اهلي': 'البنك الأهلي السعودي',
+                'الاهلي': 'البنك الأهلي السعودي',
+                'الأهلي': 'البنك الأهلي السعودي',
+                'أهلي': 'البنك الأهلي السعودي',
+                'البنك الاهلي': 'البنك الأهلي السعودي',
+                'البنك الأهلي': 'البنك الأهلي السعودي',
+                'بنك اهلي': 'البنك الأهلي السعودي',
+                'بنك الاهلي': 'البنك الأهلي السعودي',
+                'بنك الأهلي': 'البنك الأهلي السعودي',
+                'ncb': 'البنك الأهلي السعودي',
+                'alahli': 'البنك الأهلي السعودي',
+                
+                // بنك الراجحي
+                'راجحي': 'بنك الراجحي',
+                'الراجحي': 'بنك الراجحي',
+                'مصرف راجحي': 'مصرف الراجحي',
+                'مصرف الراجحي': 'مصرف الراجحي',
+                'بنك راجحي': 'بنك الراجحي',
+                'rajhi': 'بنك الراجحي',
+                'alrajhi': 'بنك الراجحي',
+                
+                // بنك الرياض
+                'رياض': 'بنك الرياض',
+                'الرياض': 'بنك الرياض',
+                'بنك رياض': 'بنك الرياض',
+                'riyadh': 'بنك الرياض',
+                'riyad': 'بنك الرياض',
+                
+                // بنك ساب
+                'ساب': 'بنك ساب (SABB)',
+                'sab': 'بنك ساب (SABB)',
+                'sabb': 'بنك ساب (SABB)',
+                'البنك السعودي البريطاني': 'البنك السعودي البريطاني (ساب سابقاً)',
+                
+                // بنك الجزيرة
+                'جزيرة': 'بنك الجزيرة',
+                'الجزيرة': 'بنك الجزيرة',
+                'بنك جزيرة': 'بنك الجزيرة',
+                'aljazira': 'بنك الجزيرة',
+                
+                // بنك البلاد
+                'بلاد': 'بنك البلاد',
+                'البلاد': 'بنك البلاد',
+                'بنك بلاد': 'بنك البلاد',
+                'albilad': 'بنك البلاد',
+                
+                // بنك الإنماء
+                'انماء': 'بنك الإنماء',
+                'الانماء': 'بنك الإنماء',
+                'الإنماء': 'بنك الإنماء',
+                'إنماء': 'بنك الإنماء',
+                'بنك انماء': 'بنك الإنماء',
+                'بنك الانماء': 'بنك الإنماء',
+                'بنك الإنماء': 'بنك الإنماء',
+                'مصرف انماء': 'مصرف الإنماء',
+                'مصرف الانماء': 'مصرف الإنماء',
+                'مصرف الإنماء': 'مصرف الإنماء',
+                'alinma': 'بنك الإنماء',
+                
+                // البنك العربي الوطني
+                'عربي وطني': 'البنك العربي الوطني',
+                'العربي الوطني': 'البنك العربي الوطني',
+                'البنك العربي': 'البنك العربي الوطني',
+                'anb': 'البنك العربي الوطني',
+                
+                // البنك السعودي الفرنسي
+                'فرنسي': 'البنك السعودي الفرنسي',
+                'الفرنسي': 'البنك السعودي الفرنسي',
+                'السعودي الفرنسي': 'البنك السعودي الفرنسي',
+                'banque saudi fransi': 'البنك السعودي الفرنسي',
+                'bsf': 'البنك السعودي الفرنسي',
+                
+                // البنك الأول
+                'الاول': 'البنك الأول',
+                'الأول': 'البنك الأول',
+                'بنك اول': 'البنك الأول',
+                'بنك الاول': 'البنك الأول',
+                'بنك الأول': 'البنك الأول',
+                'alawwal': 'البنك الأول',
+                
+                // بنك الخليج الدولي
+                'خليج دولي': 'بنك الخليج الدولي',
+                'الخليج الدولي': 'بنك الخليج الدولي',
+                'gib': 'بنك الخليج الدولي',
+                
+                // البنك السعودي للاستثمار
+                'استثمار': 'البنك السعودي للاستثمار (SAIB)',
+                'الاستثمار': 'البنك السعودي للاستثمار (SAIB)',
+                'السعودي للاستثمار': 'البنك السعودي للاستثمار (SAIB)',
+                'saib': 'البنك السعودي للاستثمار (SAIB)',
+                
+                // البنك التجاري الكويتي
+                'تجاري كويتي': 'البنك التجاري الكويتي - السعودية',
+                'التجاري الكويتي': 'البنك التجاري الكويتي - السعودية',
+                'cbk': 'البنك التجاري الكويتي - السعودية',
+                
+                // بنك الاستثمار العربي السعودي
+                'استثمار عربي': 'بنك الاستثمار العربي السعودي',
+                'الاستثمار العربي': 'بنك الاستثمار العربي السعودي',
+                'saab': 'بنك الاستثمار العربي السعودي'
+            };
+
+            // البحث عن مطابقة مباشرة
+            if (bankMappings[input]) {
+                return bankMappings[input];
+            }
+
+            // البحث عن مطابقة جزئية
+            for (const [key, value] of Object.entries(bankMappings)) {
+                if (input.includes(key) || key.includes(input)) {
+                    return value;
+                }
+            }
+
+            // إذا لم توجد مطابقة، إرجاع النص الأصلي
+            return partialBankName;
         }
 
         function isReceiverColumn(text) {
@@ -7775,7 +8119,8 @@
             // البيانات البنكية
             currentMemberDetails.iban = document.getElementById('detailIban').value;
             currentMemberDetails.accountNumber = document.getElementById('detailAccountNumber').value;
-            currentMemberDetails.bankName = document.getElementById('detailBankName').value;
+            const bankInput = document.getElementById('detailBankName').value;
+            currentMemberDetails.bankName = matchBankName(bankInput);
             currentMemberDetails.accountHolder = document.getElementById('detailAccountHolder').value;
 
             // بيانات الزواج
@@ -7903,25 +8248,8 @@
 
                 member.civilId = newId;
 
-                // التحقق من عدم وجود المستخدم مسبقاً قبل الإضافة
-                const existingUser = users.find(u => u.id === member.id);
-                if (!existingUser) {
-                    // إضافة المستخدم إلى قائمة المستخدمين
-                    users.push({
-                        id: member.id,
-                        name: member.name,
-                        role: 'member',
-                        phone: member.phone,
-                        civilId: newId,
-                        createdAt: new Date().toISOString(),
-                        lastLogin: null
-                    });
-                } else {
-                    // تحديث السجل المدني للمستخدم الموجود
-                    existingUser.civilId = newId;
-                    existingUser.name = member.name;
-                    existingUser.phone = member.phone;
-                }
+                // إنشاء أو تحديث حساب العضو باستخدام النظام الجديد
+                createMemberAccount(member);
             });
 
             saveMembers();

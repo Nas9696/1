@@ -1,0 +1,12 @@
+[
+  {
+    "id": "admin",
+    "name": "المدير العام",
+    "role": "admin",
+    "phone": "",
+    "civilId": "admin",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "lastLogin": "2024-01-01T00:00:00.000Z",
+    "permissions": ["all"]
+  }
+]
