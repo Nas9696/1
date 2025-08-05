@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1754397943725",
+    "name": "شباب ال مستنير",
+    "description": "ابناء القبيلة",
+    "date": "2025-01-01",
+    "type": "association",
+    "amount": 1000,
+    "president": "ناصر علي حويل",
+    "secretary": "حسين محمد شلاع",
+    "treasurer": "حسين علي شلاع",
+    "status": "نشطة",
+    "createdAt": "2025-08-05T12:45:43.725Z"
+  },
+  {
+    "id": "1754398617616",
+    "name": "معاونة نايف مهدي بيلح",
+    "description": "آل حويل",
+    "date": "2025-07-03",
+    "type": "cooperation",
+    "amount": null,
+    "president": "صالح مسعود",
+    "secretary": "صالح هادي",
+    "treasurer": "",
+    "status": "نشطة",
+    "createdAt": "2025-08-05T12:56:57.616Z"
+  },
+  {
+    "id": "1754398646981",
+    "name": "معاونة ابراهيم علي حويل",
+    "description": "آل مخلص",
+    "date": "2025-07-10",
+    "type": "cooperation",
+    "amount": null,
+    "president": "صالح مسعود",
+    "secretary": "",
+    "treasurer": "",
+    "status": "نشطة",
+    "createdAt": "2025-08-05T12:57:26.981Z"
+  },
+  {
+    "id": "1754398680436",
+    "name": "معونة خالد عوض",
+    "description": "آل مخلص",
+    "date": "2025-08-01",
+    "type": "cooperation",
+    "amount": null,
+    "president": "صالح مسعود",
+    "secretary": "",
+    "treasurer": "",
+    "status": "نشطة",
+    "createdAt": "2025-08-05T12:58:00.436Z"
+  },
+  {
+    "id": "1754398700361",
+    "name": "معونة زواج زايد صالح ",
+    "description": "آل مخلص",
+    "date": "2025-08-01",
+    "type": "cooperation",
+    "amount": null,
+    "president": "صالح مسعود",
+    "secretary": "",
+    "treasurer": "",
+    "status": "نشطة",
+    "createdAt": "2025-08-05T12:58:20.361Z"
+  },
+  {
+    "id": "1754398735571",
+    "name": "معونة زواج ناصر علي",
+    "description": "آل مخلص",
+    "date": "2025-09-03",
+    "type": "cooperation",
+    "amount": null,
+    "president": "صالح مسعود",
+    "secretary": "ناصر مسعود",
+    "treasurer": "",
+    "status": "نشطة",
+    "createdAt": "2025-08-05T12:58:55.571Z"
+  }
+]

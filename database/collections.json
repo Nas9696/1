@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1752090078103",
+    "associationId": "1752089180589",
+    "type": "group",
+    "memberId": "",
+    "amount": 500,
+    "receiver": "صالح مسعود",
+    "date": "2025-07-09",
+    "notes": "",
+    "createdAt": "2025-07-09T19:41:18.103Z"
+  },
+  {
+    "id": "1752157265113",
+    "associationId": "1752090155492",
+    "type": "single",
+    "memberId": "17520905389642fqkouyo7",
+    "amount": 1000,
+    "receiver": "ناصر علي حويل",
+    "date": "2025-07-10",
+    "notes": "",
+    "createdAt": "2025-07-10T14:21:05.113Z"
+  }
+]
